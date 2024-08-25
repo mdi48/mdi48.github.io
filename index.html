@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Max Dickson - Dev for hire</title>
+    <meta charset="utf-8">
+    <meta lang="en">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="This is my personal portfolio site :D">
+    <meta name="author" content="Max Dickson">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <!--Home-->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul id="side-menu">
+                    <li><a href="#header">Me</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-text">
+            <p><strong>Developer</strong></p>
+            <h1>Sup? My name is <span>Max Dickson</span>,<br> a recent compsci grad from Christchurch, New Zealand</h1>
+        </div>
+    </div>
+
+
+    <!--About-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/me.jpg" alt="me"> <!-- Need to find a more recent pic of me that I don't hate -->
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <br>
+                    <p class="introduction">Hi, my name is Max. I am a recent grad from the University of Canterbury.
+                        Armed with a Bachelor of Science in Computer Science (and a minor in Philosophy),
+                        I am now looking to start my career in the tech industry. I am passionate about web development,
+                        and I am always excited to learn new things. Outside of coding, my passions include music,
+                        cinema, philosophy, and gaming. I believe that a healthy mindset is key to success in the
+                        increasingly fast-paced paced tech world, and I am always looking for ways to improve myself.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="tabOpen('skills')">Skills</p>
+                        <p class="tab-links" onclick="tabOpen('education')">Education</p>
+                        <p class="tab-links" onclick="tabOpen('experience')">Experience</p>
+                        <p class="tab-links" onclick="tabOpen('currently learning')">Currently Learning</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>HTML / CSS</span><br>UI/UX Design</li>
+                            <li><span>JavaScript</span><br>React, Node.js, TypeScript</li>
+                            <li><span>Python</span><br>Django</li>
+                            <li><span>Java</span><br>Software Development</li>
+                            <li><span>SQL</span><br>Database Management</li>
+                            <li><span>Git</span><br>Version Control</li>
+                            <li><span>Agile</span><br>Project Management</li>
+                            <li><span>Windows / Linux</span><br>Operating Systems</li>
+                            <li><span>Prolog</span><br>Declarative Programming</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020-2024</span><br>University of Canterbury - Bachelor of Science (Major: Computer Science, Minor: Philosophy)</li>
+                            <li><span>2017-2018</span><br>Hagley College - NCEA Level 3</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Tutor</span><br>I spent the summer of 2021 to 2022 tutoring high schoolers in basic Python programming so that they could have a
+                                basic understanding of programming before starting their first year of university.</li>
+                            <li><span>Volunteer</span><br>I spent 2019 to 2020 doing volunteer work at Creative Junk, an arts and crafts store.
+                                This role had me cleaning, unloading and packing supplies, and aiding customers at Creative Junk until COVID-19 hit.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="currently learning">
+                        <ul>
+                            <li><span>PHP</span><br>Server-side Scripting</li>
+                            <li><span>NoSQL</span><br>Non-relational Database Management</li>
+                            <li><span>Elixir</span><br>Functional Programming</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+    <!--Projects-->
+    <div id="projects">
+        <div class="container">
+        </div>
+    </div>
+
+    <!--Contact-->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p>max.dickson2000@gmail.com</p>
+                    <p>+64 022 386 0296</p>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/max-dickson-5080a7248/" target="_blank">Linkedin</a>
+                        <!--add others-->
+                    </div>
+                    <!--my resume here-->
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Name" required>
+                        <input type="email" name="Email" placeholder="Email" required>
+                        <textarea name="Message" rows="3" placeholder="Message" required></textarea>
+                        <button type="submit" class="btn">Send</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <p>
+            &copy; 2024 Max Dickson. All rights reserved.
+        </p>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
