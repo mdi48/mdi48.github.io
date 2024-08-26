@@ -266,3 +266,131 @@ nav ul li a:hover::after {
     bottom: 0;
     width: 100%;
 }
+
+
+
+
+
+
+
+/* Mobile Responsive */
+@media only screen and (max-width: 600px) {
+
+    #header {
+        background-image: url('images/background.png');
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        background-color: white;
+    }
+
+    .header-text {
+        margin-top: 30%;
+        padding: 10px;
+        padding-left: 30px;
+        font-size: 30px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 10%;
+        border: 5px solid black;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 30px;
+        transition: 0.8s;
+    }
+
+    .header-text h1 {
+        font-size: 40px;
+        margin-top: 20px;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -170px;
+        width: 170px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        background: #000;
+        text-align: center;
+        display: block;
+        transition: all 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    .sub-title {
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        padding-bottom: 20px;
+        padding-right: 15px;
+    }
+
+    #about {
+        padding: 10px;
+        color: white;
+        border-top: 4px solid #00ff22;
+    }
+
+    .about-col-1 img {
+        width: 100%;
+        border: 4px solid #00ff22;
+        border-radius: 15px;
+        margin-right: 15px;
+    }
+
+    .about-col-1 {
+        flex-basis: 100%;
+    }
+
+    .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    .contact-left {
+        padding-top: 70px;
+        padding-left: 0;
+        flex-basis: 100%;
+    }
+
+    .contact-right {
+        padding-right: 0;
+        padding-top: 50px;
+        flex-basis: 100%;
+    }
+
+    .contact-left p {
+        margin-top: 30px;
+        font-size: 20px;
+    }
+
+    .btn {
+        display: block;
+        margin: 50px auto;
+        width: fit-content;
+        border: 3px solid #00ff22;
+        padding: 14px 50px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 15px;
+        background: linear-gradient(90deg, #00ff22, #ff0800);
+        background-size: 100% 100%;
+        background-position: right bottom;
+        transition: all 0.8s ease-out;
+    }
+
+    .btn:hover {
+        background-position: left;
+        border-color: #ff0800;
+    }
+
+    .contact-right form {
+        width: 100%;
+    }
+}
