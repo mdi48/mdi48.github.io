@@ -323,11 +323,11 @@ nav ul li a:hover::after {
     }
 
     .sub-title {
+        font-size: 30px;
         font-weight: bold;
+        padding-right: 120px;
         color: white;
-        text-align: center;
         padding-bottom: 20px;
-        padding-right: 15px;
     }
 
     #about {
@@ -347,8 +347,15 @@ nav ul li a:hover::after {
         flex-basis: 100%;
     }
 
+
+
     .about-col-2 {
         flex-basis: 100%;
+    }
+
+    .tab-links {
+        font-size: 20px;
+        margin-right: 20px;
     }
 
     .contact-left {
