@@ -8,87 +8,98 @@
     <meta name="description" content="Max's portfolio site">
     <meta name="author" content="Max Dickson">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./output.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-black text-white">
 
 
     <!--Home-->
-    <div id="header">
-        <div class="container">
-            <nav>
-                <ul id="side-menu">
-                    <li><a href="#header">Me</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+    <div class="w-full background">
+        <div class="px-10 py-[5%] overflow-hidden">
+            <nav class="flex flex-wrap justify-between items-center">
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00ff22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </div>
+                <ul class="header-stuff" id="side-menu">
+                    <li class="header-list"><a href="#me" class="header-links">Me</a></li>
+                    <li class="header-list"><a href="#about" class="header-links">About</a></li>
+                    <li class="header-list"><a href="#projects" class="header-links">Projects</a></li>
+                    <li class="header-list"><a href="#contact" class="header-links">Contact</a></li>
                 </ul>
             </nav>
         </div>
 
         <div class="header-text">
-            <p><strong>Developer</strong></p>
-            <h1>Sup? My name is <span>Max Dickson</span>,<br> a recent compsci grad from Christchurch, New Zealand</h1>
+            <p class="transition duration-100 ease-in-out hover:text-red-500"><strong>Developer</strong></p>
+            <h1 class="text-6xl mt-20">Sup? My name is <span class="transition ease-in-out duration-100 hover:text-red-500">Max Dickson</span>,<br> a recent compsci grad from Christchurch, New Zealand</h1>
         </div>
     </div>
 
 
     <!--About-->
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/me.jpg" alt="me"> <!-- Need to find a more recent pic of me that I don't hate -->
+    <div class="p-80 color-white border-t-4 border-solid border-green-500" id="about">
+        <div class="p-10 overflow-hidden">
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="basis-[35%]">
+                    <img class="w-full border border-4 border-solid border-green-500 rounded-2xl mr-4"src="images/me.jpg" alt="me"> <!-- Need to find a more recent pic of me that I don't hate -->
                 </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
+                <div class="basis-[60%]">
+                    <h1 class="text-4xl font-bold text-white text-center pb-5">About Me</h1>
                     <br>
-                    <p class="introduction">Hi, my name is Max. I am a recent grad from the University of Canterbury.
+                    <p class="text-2xl text-white pb-5">Hi, my name is Max. I am a recent grad from the University of Canterbury.
                         Armed with a Bachelor of Science in Computer Science (and a minor in Philosophy),
                         I am now looking to start my career in the tech industry. I am passionate about web development,
                         and I am always excited to learn new things. Outside of coding, my passions include music,
                         cinema, philosophy, and gaming. I believe that a healthy mindset is key to success in the
                         increasingly fast-paced paced tech world, and I am always looking for ways to improve myself.
                     </p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="tabOpen('skills')">Skills</p>
-                        <p class="tab-links" onclick="tabOpen('education')">Education</p>
-                        <p class="tab-links" onclick="tabOpen('experience')">Experience</p>
-                        <p class="tab-links" onclick="tabOpen('currently learning')">Currently Learning</p>
+                    <div class="flex mx-30 mb-0 mt-40">
+                        <p class="tab-links active-link hover:text-red-500" onclick="tabOpen('skills')">Skills</p>
+                        <p class="tab-links hover:text-red-500" onclick="tabOpen('education')">Education</p>
+                        <p class="tab-links hover:text-red-500" onclick="tabOpen('experience')">Experience</p>
+                        <p class="tab-links hover:text-red-500" onclick="tabOpen('currently learning')">Currently Learning</p>
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>HTML / CSS</span><br>UI/UX Design</li>
-                            <li><span>JavaScript</span><br>React, Node.js, TypeScript</li>
-                            <li><span>Python</span><br>Django</li>
-                            <li><span>Java</span><br>Software Development</li>
-                            <li><span>SQL</span><br>Database Management</li>
-                            <li><span>Git</span><br>Version Control</li>
-                            <li><span>Agile</span><br>Project Management</li>
-                            <li><span>Windows / Linux</span><br>Operating Systems</li>
-                            <li><span>Prolog</span><br>Declarative Programming</li>
+                            <li class="inside-tab"><span>HTML / CSS</span><br>UI/UX Design, Tailwind.css</li>
+                            <li class="inside-tab"><span>JavaScript</span><br>React, Node.js, TypeScript</li>
+                            <li class="inside-tab"><span>Python</span><br>Django</li>
+                            <li class="inside-tab"><span>Java</span><br>Software Development</li>
+                            <li class="inside-tab"><span>SQL</span><br>Database Management</li>
+                            <li class="inside-tab"><span>MongoDB</span><br>Document Databases</span></li>
+                            <li class="inside-tab"><span>Git</span><br>Version Control</li>
+                            <li class="inside-tab"><span>Agile</span><br>Project Management</li>
+                            <li class="inside-tab"><span>Windows / Linux (Ubuntu, Mint)</span><br>Operating Systems, Command Line</li>
+                            <li class="inside-tab"><span>Shells</span><br>Bash, PowerShell</li>
+                            <li class="inside-tab"><span>Prolog</span><br>Declarative Programming</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="education">
                         <ul>
-                            <li><span>2020-2024</span><br>University of Canterbury - Bachelor of Science (Major: Computer Science, Minor: Philosophy)</li>
-                            <li><span>2017-2018</span><br>Hagley College - NCEA Level 3</li>
+                            <li class="inside-tab"><span>2020-2024</span><br>University of Canterbury - Bachelor of Science (Major: Computer Science, Minor: Philosophy)</li>
+                            <li class="inside-tab"><span>2017-2018</span><br>Hagley College - NCEA Level 3</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span>Tutor</span><br>I spent the summer of 2021 to 2022 tutoring high schoolers in basic Python programming so that they could have a
+                            <li class="inside-tab"><span>Freelance Web Developer (Fiverr)</span><br>From October 2024 to mid-January 2025 I briefly worked as a freelancer for clients as a means of keeping myself occupied while also making money.
+                                I decided to discontinue this as I found there were not enough clients willing to pay for my services.</span></li>
+                            <li class="inside-tab"><span>Tutor</span><br>I spent the summer of 2021 to 2022 tutoring high schoolers in basic Python programming so that they could have a
                                 basic understanding of programming before starting their first year of university.</li>
-                            <li><span>Volunteer</span><br>I spent 2019 to 2020 doing volunteer work at Creative Junk, an arts and crafts store.
+                            <li class="inside-tab"><span>Volunteer</span><br>I spent 2019 to 2020 doing volunteer work at Creative Junk, an arts and crafts store.
                                 This role had me cleaning, unloading and packing supplies, and aiding customers at Creative Junk until COVID-19 hit.</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="currently learning">
                         <ul>
-                            <li><span>PHP</span><br>Server-side Scripting</li>
-                            <li><span>NoSQL</span><br>Non-relational Database Management</li>
-                            <li><span>Elixir</span><br>Functional Programming</li>
+                            <li class="inside-tab"><span>Cloud Computing</span><br>AWS</li>
+                            <li class="inside-tab"><span>Elixir</span><br>Functional Programming</li>
                         </ul>
                     </div>
                 </div>
@@ -96,44 +107,75 @@
     </div>
 
 
-    <!--Projects-->
-    <div id="projects">
-        <div class="container">
-        </div>
-    </div>
 
-    <!--Contact-->
-    <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p>max.dickson2000@gmail.com</p>
-                    <p>+64 022 386 0296</p>
 
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/max-dickson-5080a7248/" target="_blank">Linkedin</a>
-                        <!--add others-->
+<!-- Contact + Projects Section -->
+    <div id="contact" class="border-t-4 border-solid border-green-500">
+        <div class="p-10 overflow-hidden">
+            <h1 class="text-4xl font-bold text-white text-center">Contact and projects</h1>
+
+            <!-- separate contact and projects -->
+            <div class="flex justify-between flex-wrap mt-10">
+
+                <!-- contact info and form on lhs -->
+                <div class="w-1/2 pl-[60px]">
+                    <p class="text-xl header-list header-links">max.dickson2000@gmail.com</p>
+                    <p class="text-xl header-list header-links">+64 022 386 0296</p>
+
+                    <br/>
+                    <ul class="social-links header-list">
+                        <li><a href="https://www.linkedin.com/in/max-dickson-5080a7248/" target="_blank" class="header-links">LinkedIn</a></li>
+                        <li><a href="https://github.com/mdi48" target="_blank" class="header-links">GitHub</a></li>
+                    </ul>
+
+                    <br/>
+                    <a href="resume.pdf" target="_blank" class="mt-[30px] text-xl header-links">Download Resume</a>
+
+                    <br/><br/>
+
+                    <!-- form. credit to @jamiewilson on github for the code -->
+                    <div class="pr-[40px] pt-[40px] w-full">
+                        <form name="submit-to-google-sheet" class="space-y-4 text-black">
+                            <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Name" required>
+                            <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Email" required>
+                            <textarea type="text"name="message" rows="3" class="w-full p-2 border border-gray-300 rounded" placeholder="Message" required></textarea>
+                            <button type="submit" class="btn">Send</button>
+                        </form>
+                        <span id="msg"></span>
                     </div>
-                    <!--my resume here-->
                 </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Name" required>
-                        <input type="email" name="Email" placeholder="Email" required>
-                        <textarea name="Message" rows="3" placeholder="Message" required></textarea>
-                        <button type="submit" class="btn">Send</button>
-                    </form>
-                    <span id="msg"></span>
+
+                <!-- some projects on rhs -->
+                <div class="w-1/2 px-10">
+                    <p>Please note that I do not have much time to work on projects due to a trifecta of autism, adhd, and depression leading to frequent cases of "coder's block". I find it easier
+                    to perform commissioned projects or collaborative ones because of this; I hope you understand.</p>
+                    <ul class="space-y-4 mt-4 list-none">
+                        <li class="inside-tab"><span><a href="https://github.com/mdi48/research-blog" target="_blank" class="text-xl text-red-600 hover:underline">Research Blog</a></span><br>
+                            This was a project that was planned to be for a blog that some friends and I were going to be running on philosophy. It has been abandoned for now as it was felt that
+                            a podcast would be a better medium for this kind of content; however the code for what was initially planned is here in case you want to examine it.</li>
+
+                        <li class="inside-tab"><span><a href="https://github.com/mdi48/FoodFinder" target="_blank" class="text-xl text-red-600 hover:underline">FoodFinder</a></span><br>
+                            This was a project I made to get some experience working with Next and Docker. It utilizes JS Web Tokens and GraphQL to allow users to search for places to eat.</li>
+
+                        <li class="inside-tab"><span><a href="https://github.com/mdi48/petition-site-backend" target="_blank" class="text-xl text-red-600 hover:underline">Petition Site (Backend)</a></span><br>
+                            The backend of a petition site that was developed for the University of Canterbury's SENG365 course. Received a mark of 86/100.</li>
+
+                        <li class="inside-tab"><span><a href="https://github.com/mdi48/petition-site-frontend--unfinished--" target="_blank" class="text-xl text-red-600 hover:underline">Petition Site (Frontend)</a></span><br>
+                            The (React) frontend of the petition site mentioned above. Unfortunately this was not finished to the standard I wanted it to be due to an ongoing personal crisis causing a great deal of stress.</li>
+
+                        <li class="inside-tab"><span><a href="mdi48.github.io/" class="text-xl text-red-600 hover:underline">Recursive</a></span><br>
+                            The website you're currently looking at :P</li>
+                    </ul>
                 </div>
+
             </div>
         </div>
     </div>
 
 
-    <footer id="footer">
+    <footer class="bg-[#00ff22] text-black text-center px-10 py-0 bottom-0 w-full relative">
         <p>
-            &copy; 2024 Max Dickson. All rights reserved.
+            &copy; 2025 Max Dickson. All rights reserved.
         </p>
     </footer>
 </body>
