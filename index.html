@@ -43,11 +43,11 @@
 
 
     <!--About-->
-    <div class="p-80 color-white border-t-4 border-solid border-green-500" id="about">
+    <div class="color-white border-t-4 border-solid border-green-500 sm:p-80" id="about">
         <div class="p-10 overflow-hidden">
             <div class="flex flex-wrap justify-between items-center">
                 <div class="basis-[35%]">
-                    <img class="w-full border border-4 border-solid border-green-500 rounded-2xl mr-4"src="images/me.jpg" alt="me"> <!-- Need to find a more recent pic of me that I don't hate -->
+                    <img class="w-full border border-4 border-solid border-green-500 rounded-2xl mr-4 sm:justify-center"src="images/me.jpg" alt="me"> <!-- Need to find a more recent pic of me that I don't hate -->
                 </div>
                 <div class="basis-[60%]">
                     <h1 class="text-4xl font-bold text-white text-center pb-5">About Me</h1>
@@ -59,11 +59,10 @@
                         cinema, philosophy, and gaming. I believe that a healthy mindset is key to success in the
                         increasingly fast-paced paced tech world, and I am always looking for ways to improve myself.
                     </p>
-                    <div class="flex mx-30 mb-0 mt-40">
+                    <div class="flex align-center justify-center">
                         <p class="tab-links active-link hover:text-red-500" onclick="tabOpen('skills')">Skills</p>
                         <p class="tab-links hover:text-red-500" onclick="tabOpen('education')">Education</p>
                         <p class="tab-links hover:text-red-500" onclick="tabOpen('experience')">Experience</p>
-                        <p class="tab-links hover:text-red-500" onclick="tabOpen('currently learning')">Currently Learning</p>
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
@@ -94,12 +93,6 @@
                                 basic understanding of programming before starting their first year of university.</li>
                             <li class="inside-tab"><span>Volunteer</span><br>I spent 2019 to 2020 doing volunteer work at Creative Junk, an arts and crafts store.
                                 This role had me cleaning, unloading and packing supplies, and aiding customers at Creative Junk until COVID-19 hit.</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="currently learning">
-                        <ul>
-                            <li class="inside-tab"><span>Cloud Computing</span><br>AWS</li>
-                            <li class="inside-tab"><span>Elixir</span><br>Functional Programming</li>
                         </ul>
                     </div>
                 </div>
@@ -147,9 +140,12 @@
 
                 <!-- some projects on rhs -->
                 <div class="w-1/2 px-10">
-                    <p>Please note that I do not have much time to work on projects due to a trifecta of autism, adhd, and depression leading to frequent cases of "coder's block". I find it easier
-                    to perform commissioned projects or collaborative ones because of this; I hope you understand.</p>
+                    <p>Please note that I do not find as much time to work on projects as I would like due to depression leading to frequent cases of "coder's block". I find it easier
+                    to perform commissioned projects or collaborative ones because of this. I hope you understand.</p>
                     <ul class="space-y-4 mt-4 list-none">
+                        <li class="inside-tab"><span><a href="https://github.com/mdi48/FlappAI-Bird" target="_blank" class="text-xl text-red-600 hover:underline">FlappAI-Bird</a></a></span><br>
+                            A Flappy Bird clone that utilizes the NEAT neural network algorithm to learn from the mistakes of its previous attempts. This was done as a way of familiarizing myself
+                            with the basics of neural networks and aspects of machine learning in Python.</li>
                         <li class="inside-tab"><span><a href="https://github.com/mdi48/research-blog" target="_blank" class="text-xl text-red-600 hover:underline">Research Blog</a></span><br>
                             This was a project that was planned to be for a blog that some friends and I were going to be running on philosophy. It has been abandoned for now as it was felt that
                             a podcast would be a better medium for this kind of content; however the code for what was initially planned is here in case you want to examine it.</li>
