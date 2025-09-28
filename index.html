@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Max Dickson - Dev for hire</title>
     <meta charset="utf-8">
@@ -8,7 +8,6 @@
     <meta name="description" content="Max's portfolio site">
     <meta name="author" content="Max Dickson">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="./output.css" rel="stylesheet">
 </head>
 
@@ -18,15 +17,15 @@
     <!--Home-->
     <div class="w-full background">
         <div class="px-10 py-[5%] overflow-hidden">
-            <nav class="flex flex-wrap justify-between items-center">
-                <div class="menu-icon" onclick="toggleMenu()">
+            <nav class="flex flex-wrap justify-between items-center relative z-50">
+                <button class="menu-icon" onclick="toggleMenu()" aria-label="Toggle navigation menu">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00ff22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
-                </div>
-                <ul class="header-stuff" id="side-menu">
+                </button>
+                <ul class="nav-menu" id="side-menu">
                     <li class="header-list"><a href="#me" class="header-links">Me</a></li>
                     <li class="header-list"><a href="#about" class="header-links">About</a></li>
                     <li class="header-list"><a href="#projects" class="header-links">Projects</a></li>
@@ -36,47 +35,46 @@
         </div>
 
         <div class="header-text">
-            <p class="transition duration-100 ease-in-out hover:text-red-500"><strong>Developer</strong></p>
-            <h1 class="text-6xl mt-20">Sup? My name is <span class="transition ease-in-out duration-100 hover:text-red-500">Max Dickson</span>,<br> a recent compsci grad from Christchurch, New Zealand</h1>
+            <p class="transition duration-300 ease-in-out hover:text-red-500 text-2xl font-bold"><strong>Developer</strong></p>
+            <h1 class="text-4xl md:text-6xl mt-8">Hi, My name is <span class="transition ease-in-out duration-300 hover:text-red-500">Max Dickson</span>,<br> a software engineer from Christchurch, NZ</h1>
         </div>
     </div>
 
 
     <!--About-->
-    <div class="color-white border-t-4 border-solid border-green-500 sm:p-80" id="about">
-        <div class="p-10 overflow-hidden">
-            <div class="flex flex-wrap justify-between items-center">
-                <div class="basis-[35%]">
-                    <img class="w-full border border-4 border-solid border-green-500 rounded-2xl mr-4 sm:justify-center"src="images/me.jpg" alt="me"> <!-- Need to find a more recent pic of me that I don't hate -->
+    <section class="text-white border-t-4 border-solid border-neon-green py-20" id="about">
+        <div class="container mx-auto p-10 overflow-hidden">
+            <div class="flex flex-wrap justify-between items-start gap-8">
+                <div class="w-full lg:w-[35%]">
+                    <img class="w-full border-4 border-solid border-neon-green rounded-2xl shadow-lg" src="images/me.jpg" alt="Max Dickson - Software Developer"> <!-- Need to find a more recent pic of me that I don't hate -->
                 </div>
-                <div class="basis-[60%]">
-                    <h1 class="text-4xl font-bold text-white text-center pb-5">About Me</h1>
-                    <br>
-                    <p class="text-2xl text-white pb-5">Hi, my name is Max. I am a recent grad from the University of Canterbury.
-                        Armed with a Bachelor of Science in Computer Science (and a minor in Philosophy),
-                        I am now looking to start my career in the tech industry. I am passionate about web development,
-                        and I am always excited to learn new things. Outside of coding, my passions include music,
-                        cinema, philosophy, and gaming. I believe that a healthy mindset is key to success in the
-                        increasingly fast-paced paced tech world, and I am always looking for ways to improve myself.
+                <div class="w-full lg:w-[60%]">
+                    <h2 class="text-4xl font-bold text-white text-center pb-8">About Me</h2>
+                    <p class="text-xl md:text-2xl text-white pb-8 leading-relaxed">Hi, my name is Max. I am an aspiring software developer from Christchurch, New Zealand.
+                        Armed with a Bachelor of Science majoring in Computer Science (with a minor in Philosophy),
+                        I am now looking to start my career in the tech industry. I am passionate about computers and technology,
+                        and I am always excited to learn new things. Outside of programming, my passions include music,
+                        cinema, philosophy, and gaming. I believe that a healthy and open-minded approach is key to success in the
+                        increasingly fast-paced tech world, and I am always looking for ways to improve myself and refine my skills.
                     </p>
-                    <div class="flex align-center justify-center">
-                        <p class="tab-links active-link hover:text-red-500" onclick="tabOpen('skills')">Skills</p>
-                        <p class="tab-links hover:text-red-500" onclick="tabOpen('education')">Education</p>
-                        <p class="tab-links hover:text-red-500" onclick="tabOpen('experience')">Experience</p>
+                    <div class="flex flex-wrap justify-center gap-4 mb-8">
+                        <button class="tab-links active-link font-bold" onclick="tabOpen('skills', event)" role="tab" aria-selected="true">Skills</button>
+                        <button class="tab-links font-bold" onclick="tabOpen('education', event)" role="tab" aria-selected="false">Education</button>
+                        <button class="tab-links font-bold" onclick="tabOpen('experience', event)" role="tab" aria-selected="false">Experience</button>
                     </div>
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li class="inside-tab"><span>HTML / CSS</span><br>UI/UX Design, Tailwind.css</li>
-                            <li class="inside-tab"><span>JavaScript</span><br>React, Node.js, TypeScript</li>
-                            <li class="inside-tab"><span>Python</span><br>Django</li>
-                            <li class="inside-tab"><span>Java</span><br>Software Development</li>
-                            <li class="inside-tab"><span>SQL</span><br>Database Management</li>
-                            <li class="inside-tab"><span>MongoDB</span><br>Document Databases</span></li>
-                            <li class="inside-tab"><span>Git</span><br>Version Control</li>
-                            <li class="inside-tab"><span>Agile</span><br>Project Management</li>
-                            <li class="inside-tab"><span>Windows / Linux (Ubuntu, Mint)</span><br>Operating Systems, Command Line</li>
-                            <li class="inside-tab"><span>Shells</span><br>Bash, PowerShell</li>
-                            <li class="inside-tab"><span>Prolog</span><br>Declarative Programming</li>
+                            <li class="inside-tab"><span>HTML / CSS</span><br><p class="subset-skills">UI/UX Design, Tailwind.css</p></li>
+                            <li class="inside-tab"><span>JavaScript</span><br><p class="subset-skills">React, Node.js, TypeScript, Next.js</p></li>
+                            <li class="inside-tab"><span>Python</span><br><p class="subset-skills">Django</p></li>
+                            <li class="inside-tab"><span>Java</span><br><p class="subset-skills">Software Development</p></li>
+                            <li class="inside-tab"><span>SQL</span><br><p class="subset-skills">Database Management</p></li>
+                            <li class="inside-tab"><span>MongoDB</span><br><p class="subset-skills">Document Databases</p></li>
+                            <li class="inside-tab"><span>Git</span><br><p class="subset-skills">Version Control</p></li>
+                            <li class="inside-tab"><span>Agile</span><br><p class="subset-skills">Project Management</p></li>
+                            <li class="inside-tab"><span>Windows / Linux (Ubuntu, Mint)</span><br><p class="subset-skills">Operating Systems, Command Line</p></li>
+                            <li class="inside-tab"><span>Terminal</span><br><p class="subset-skills">Bash, PowerShell</p></li>
+                            <li class="inside-tab"><span>Prolog</span><br><p class="subset-skills">Declarative Programming</p></li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="education">
@@ -97,80 +95,151 @@
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
+    </section>
 
 
 
 
 <!-- Contact + Projects Section -->
-    <div id="contact" class="border-t-4 border-solid border-green-500">
-        <div class="p-10 overflow-hidden">
-            <h1 class="text-4xl font-bold text-white text-center">Contact and projects</h1>
+    <section id="contact" class="border-t-4 border-solid border-neon-green">
+        <div class="container mx-auto p-10 overflow-hidden">
+            <h2 class="text-4xl font-bold text-white text-center mb-12">Contact and Projects</h2>
 
             <!-- separate contact and projects -->
-            <div class="flex justify-between flex-wrap mt-10">
+            <div class="flex flex-wrap lg:flex-nowrap justify-between gap-12 mt-10">
 
                 <!-- contact info and form on lhs -->
-                <div class="w-1/2 pl-[60px]">
-                    <p class="text-xl header-list header-links">max.dickson2000@gmail.com</p>
-                    <p class="text-xl header-list header-links">+64 022 386 0296</p>
+                <div class="w-full lg:w-1/2">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-neon-green mb-4">Get In Touch</h3>
+                        <div class="space-y-3">
+                            <p class="text-xl text-white flex items-center">
+                                <span class="text-neon-green mr-2">📧</span>
+                                <a href="mailto:max.dickson2000@gmail.com" class="header-links">max.dickson2000@gmail.com</a>
+                            </p>
+                            <p class="text-xl text-white flex items-center">
+                                <span class="text-neon-green mr-2">📱</span>
+                                <a href="tel:+64022386296" class="header-links">+64 022 386 0296</a>
+                            </p>
+                        </div>
+                    </div>
 
-                    <br/>
-                    <ul class="social-links header-list">
-                        <li><a href="https://www.linkedin.com/in/max-dickson-5080a7248/" target="_blank" class="header-links">LinkedIn</a></li>
-                        <li><a href="https://github.com/mdi48" target="_blank" class="header-links">GitHub</a></li>
-                    </ul>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-neon-green mb-4">Find Me Online</h3>
+                        <ul class="social-links space-y-3">
+                            <li><a href="https://www.linkedin.com/in/max-dickson-5080a7248/" target="_blank" rel="noopener" class="header-links flex items-center">
+                                <span class="text-neon-green mr-2">💼</span> LinkedIn
+                            </a></li>
+                            <li><a href="https://github.com/mdi48" target="_blank" rel="noopener" class="header-links flex items-center">
+                                <span class="text-neon-green mr-2">🐙</span> GitHub
+                            </a></li>
+                            <li><a href="https://flowcv.com/resume/8w8qflfn4o" target="_blank" rel="noopener" class="header-links flex items-center">
+                                <span class="text-neon-green mr-2">📄</span> My Resume
+                            </a></li>
+                        </ul>
+                    </div>
 
-                    <br/>
-                    <a href="https://flowcv.com/resume/8w8qflfn4o" target="_blank" class="mt-[30px] text-xl header-links">My Resume</a>
-
-                    <br/><br/>
-
-                    <!-- form. credit to @jamiewilson on github for the code -->
-                    <div class="pr-[40px] pt-[40px] w-full">
-                        <form name="submit-to-google-sheet" class="space-y-4 text-black">
-                            <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded" placeholder="Name" required>
-                            <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Email" required>
-                            <textarea type="text"name="message" rows="3" class="w-full p-2 border border-gray-300 rounded" placeholder="Message" required></textarea>
-                            <button type="submit" class="btn">Send</button>
+                    <!-- Contact form using Formspree -->
+                    <div class="w-full">
+                        <h3 class="text-2xl font-bold text-neon-green mb-4">Send a Message</h3>
+                        <form action="https://formspree.io/f/mldpgzrq" method="POST" class="space-y-4" id="contact-form">
+                            <input type="text" name="name" class="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-neon-green focus:border-transparent" placeholder="Name" required>
+                            <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-neon-green focus:border-transparent" placeholder="Email" required>
+                            <textarea name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-neon-green focus:border-transparent resize-vertical" placeholder="Message" required></textarea>
+                            <button type="submit" class="btn w-full" id="submit-btn">Send</button>
                         </form>
-                        <span id="msg"></span>
+                        <span id="msg" class="block mt-4 text-neon-green"></span>
                     </div>
                 </div>
 
                 <!-- some projects on rhs -->
-                <div class="w-1/2 px-10">
-                    <p>Please note that I do not find as much time to work on projects as I would like due to depression leading to frequent cases of "coder's block". I find it easier
-                    to perform commissioned projects or collaborative ones because of this. I hope you understand.</p>
-                    <ul class="space-y-4 mt-4 list-none">
-                        <li class="inside-tab"><span><a href="https://github.com/mdi48/FlappAI-Bird" target="_blank" class="text-xl text-red-600 hover:underline">FlappAI-Bird</a></a></span><br>
-                            A Flappy Bird clone that utilizes the NEAT neural network algorithm to learn from the mistakes of its previous attempts. This was done as a way of familiarizing myself
-                            with the basics of neural networks and aspects of machine learning in Python.</li>
-                        <li class="inside-tab"><span><a href="https://github.com/mdi48/research-blog" target="_blank" class="text-xl text-red-600 hover:underline">Research Blog</a></span><br>
-                            This was a project that was planned to be for a blog that some friends and I were going to be running on philosophy. It has been abandoned for now as it was felt that
-                            a podcast would be a better medium for this kind of content; however the code for what was initially planned is here in case you want to examine it.</li>
+                <div class="w-full lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-neon-green mb-6">Featured Projects</h3>
+                    <div class="mb-6 p-4 bg-gray-900 bg-opacity-50 rounded-lg border border-gray-700">
+                        <p class="text-white text-sm italic">Please note that I do not find as much time to work on projects as I would like due to depression leading to frequent cases of "coder's block". I find it easier to perform commissioned projects or collaborative ones because of this. I hope you understand.</p>
+                    </div>
 
-                        <li class="inside-tab"><span><a href="https://github.com/mdi48/FoodFinder" target="_blank" class="text-xl text-red-600 hover:underline">FoodFinder</a></span><br>
-                            This was a project I made to get some experience working with Next and Docker. It utilizes JS Web Tokens and GraphQL to allow users to search for places to eat.</li>
+                    <div class="space-y-6">
+                        <div class="project-card">
+                            <h4 class="text-xl font-bold mb-2">
+                                <a href="https://github.com/mdi48/FlappAI-Bird" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">FlappAI-Bird</a>
+                            </h4>
+                            <p class="text-white">A Flappy Bird clone that utilizes the NEAT neural network algorithm to learn from the mistakes of its previous attempts. This was done as a way of familiarizing myself with the basics of neural networks and aspects of machine learning in Python.</p>
+                            <div class="mt-2">
+                                <span class="inline-block bg-neon-green text-black text-xs px-2 py-1 rounded mr-2">Python</span>
+                                <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded mr-2">Machine Learning</span>
+                                <span class="inline-block bg-purple-600 text-white text-xs px-2 py-1 rounded">NEAT</span>
+                            </div>
+                        </div>
 
-                        <li class="inside-tab"><span><a href="https://github.com/mdi48/petition-site-backend" target="_blank" class="text-xl text-red-600 hover:underline">Petition Site (Backend)</a></span><br>
-                            The backend of a petition site that was developed for the University of Canterbury's SENG365 course. Received a mark of 86/100.</li>
+                        <div class="project-card">
+                            <h4 class="text-xl font-bold mb-2">
+                                <a href="https://github.com/mdi48/research-blog" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Research Blog</a>
+                            </h4>
+                            <p class="text-white">This was a project that was planned to be for a blog that some friends and I were going to be running on philosophy. It has been abandoned for now as it was felt that a podcast would be a better medium for this kind of content; however the code for what was initially planned is here in case you want to examine it.</p>
+                            <div class="mt-2">
+                                <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded mr-2">Node.js</span>
+                                <span class="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded mr-2">React</span>
+                                <span class="inline-block bg-gray-600 text-white text-xs px-2 py-1 rounded">Blog</span>
+                            </div>
+                        </div>
 
-                        <li class="inside-tab"><span><a href="https://github.com/mdi48/petition-site-frontend--unfinished--" target="_blank" class="text-xl text-red-600 hover:underline">Petition Site (Frontend)</a></span><br>
-                            The (React) frontend of the petition site mentioned above. Unfortunately this was not finished to the standard I wanted it to be due to an ongoing personal crisis causing a great deal of stress.</li>
+                        <div class="project-card">
+                            <h4 class="text-xl font-bold mb-2">
+                                <a href="https://github.com/mdi48/FoodFinder" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">FoodFinder</a>
+                            </h4>
+                            <p class="text-white">A project I made to get some experience working with Next and Docker. It utilizes JS Web Tokens and GraphQL to allow users to search for places to eat.</p>
+                            <div class="mt-2">
+                                <span class="inline-block bg-gray-900 text-white text-xs px-2 py-1 rounded mr-2">Next.js</span>
+                                <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded mr-2">Docker</span>
+                                <span class="inline-block bg-pink-600 text-white text-xs px-2 py-1 rounded">GraphQL</span>
+                            </div>
+                        </div>
 
-                        <li class="inside-tab"><span><a href="mdi48.github.io/" class="text-xl text-red-600 hover:underline">Recursive</a></span><br>
-                            The website you're currently looking at :P</li>
-                    </ul>
+                        <div class="project-card">
+                            <h4 class="text-xl font-bold mb-2">
+                                <a href="https://github.com/mdi48/petition-site-backend" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Petition Site (Backend)</a>
+                            </h4>
+                            <p class="text-white">The backend of a petition site that was developed for the University of Canterbury's SENG365 course. Received a mark of 86/100.</p>
+                            <div class="mt-2">
+                                <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded mr-2">Node.js</span>
+                                <span class="inline-block bg-orange-600 text-white text-xs px-2 py-1 rounded mr-2">Express</span>
+                                <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded">REST API</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h4 class="text-xl font-bold mb-2">
+                                <a href="https://github.com/mdi48/petition-site-frontend--unfinished--" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Petition Site (Frontend)</a>
+                            </h4>
+                            <p class="text-white">The (React) frontend of the petition site mentioned above. Unfortunately this was not finished to the standard I wanted it to be due to an ongoing personal crisis causing a great deal of stress.</p>
+                            <div class="mt-2">
+                                <span class="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded mr-2">React</span>
+                                <span class="inline-block bg-red-500 text-white text-xs px-2 py-1 rounded">Unfinished</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h4 class="text-xl font-bold mb-2">
+                                <a href="#" class="text-neon-red hover:underline transition-colors">This Portfolio Site</a>
+                            </h4>
+                            <p class="text-white">The website you're currently looking at! Built with modern web technologies and responsive design principles.</p>
+                            <div class="mt-2">
+                                <span class="inline-block bg-orange-600 text-white text-xs px-2 py-1 rounded mr-2">HTML5</span>
+                                <span class="inline-block bg-cyan-500 text-white text-xs px-2 py-1 rounded mr-2">Tailwind CSS</span>
+                                <span class="inline-block bg-yellow-600 text-white text-xs px-2 py-1 rounded">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
-    </div>
+    </section>
 
-
-    <footer class="bg-[#00ff22] text-black text-center px-10 py-0 bottom-0 w-full relative">
-        <p>
+    <footer class="bg-neon-green text-black text-center px-10 py-4 w-full">
+        <p class="font-bold">
             &copy; 2025 Max Dickson. All rights reserved.
         </p>
     </footer>

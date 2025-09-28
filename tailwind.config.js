@@ -1,11 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './*.{html,css,jpg}',
-    './images/*.{svg,png,jpg,jpeg}',
+    './*.{html,js}',
+    './src/**/*.{html,js}',
+    './components/**/*.{html,js}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'neon-green': '#00ff22',
+        'neon-red': '#ff0800',
+      },
+      fontFamily: {
+        'sans': ['ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.3s ease-in-out',
+      },
+    },
   },
   plugins: [],
 }

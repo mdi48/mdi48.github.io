@@ -1,24 +1,29 @@
 let tabLinks = document.getElementsByClassName('tab-links');
 let tabContents = document.getElementsByClassName('tab-contents');
 
-function tabOpen(tabName) {
+function tabOpen(tabName, event) {
     let tabLinksArray = [...tabLinks];
     let tabContentsArray = [...tabContents];
 
     tabLinksArray.forEach(tabLink => {
         tabLink.classList.remove('active-link');
+        tabLink.setAttribute('aria-selected', 'false');
     });
 
     tabContentsArray.forEach(tabContent => {
         tabContent.classList.remove('active-tab');
     });
 
-    event.currentTarget.classList.add('active-link');
+    if (event?.currentTarget) {
+        event.currentTarget.classList.add('active-link');
+        event.currentTarget.setAttribute('aria-selected', 'true');
+    }
+
     document.getElementById(tabName).classList.add('active-tab');
 }
 
 function toggleMenu() {
-    const navMenu = document.querySelector('.header-stuff');
+    const navMenu = document.querySelector('.nav-menu');
     const menuIcon = document.querySelector('.menu-icon');
 
     navMenu.classList.toggle('open');
@@ -45,7 +50,7 @@ function toggleMenu() {
 }
 
 document.addEventListener('click', (e) => {
-    const navMenu = document.querySelector('.header-stuff');
+    const navMenu = document.querySelector('.nav-menu');
     const menuIcon = document.querySelector('.menu-icon');
 
     if (!navMenu.contains(e.target) && !menuIcon.contains(e.target) && navMenu.classList.contains('open')) {
@@ -53,16 +58,49 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// form for google sheet (credit to @jamiewilson on GitHub)
-const scriptUrl = "https://script.google.com/macros/s/AKfycbwRLATgDLgFp1biYG_YxsIcgyaElTT9F4KdJ1Ayr39aE8QDKgj-nPdPryO3IUNLcOsKlg/exec";
-const form = document.forms['submit-to-google-sheet'];
+// handle contact form submission via formspree
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const msgElement = document.getElementById('msg');
+    const submitBtn = document.getElementById('submit-btn');
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    fetch(scriptUrl, { method: 'POST', body: new FormData(form)})
-        .then(response => console.log('Sent!', response))
-        .catch(error => console.error('Error!', error.message));
-})
+    if (form && msgElement && submitBtn) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Update UI to show sending state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            msgElement.textContent = 'Sending your message...';
+            msgElement.style.color = '#00ff22';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    msgElement.textContent = 'Thanks for your message! I\'ll get back to you soon.';
+                    msgElement.style.color = '#00ff22';
+                    form.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                msgElement.textContent = 'There was an error sending your message D: please try again or email me directly.';
+                msgElement.style.color = '#ff0800';
+            } finally {
+                submitBtn.textContent = 'Send Message';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});
 
 
 
