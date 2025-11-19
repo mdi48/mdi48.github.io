@@ -100,6 +100,65 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Scroll to top button functionality
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Scroll-triggered animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all fade-in-scroll elements
+    document.querySelectorAll('.fade-in-scroll').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Animate skill bars when they come into view
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBars = entry.target.querySelectorAll('.skill-progress');
+                progressBars.forEach(bar => {
+                    bar.style.animation = 'none';
+                    setTimeout(() => {
+                        bar.style.animation = '';
+                    }, 10);
+                });
+            }
+        });
+    }, observerOptions);
+
+    const skillsTab = document.getElementById('skills');
+    if (skillsTab) {
+        skillObserver.observe(skillsTab);
+    }
 });
 
 

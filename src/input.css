@@ -9,11 +9,11 @@
   }
 
   .header-text {
-    @apply text-neon-green mt-[15%] p-4 pl-8 text-5xl mx-[10%] mb-[10%]
-          border-4 border-black bg-black bg-opacity-50 rounded-[30px]
-          transition-all duration-300;
+    @apply text-neon-green mt-[15%] p-8 md:p-12 text-5xl mx-[5%] md:mx-[10%] mb-[10%]
+          border-4 border-black bg-black bg-opacity-70 backdrop-blur-sm rounded-[30px]
+          transition-all duration-300 shadow-2xl;
     @apply max-sm:text-3xl max-sm:mt-[10%] max-sm:mx-[5%] max-sm:mb-[5%]
-          max-sm:p-4 max-sm:border-[3px];
+          max-sm:p-6 max-sm:border-[3px];
   }
 
   .nav-menu {
@@ -45,9 +45,15 @@
   }
 
   .tab-links {
-    @apply mr-12 text-xl font-medium cursor-pointer relative
-          transition-colors duration-300 hover:text-red-500;
-    @apply sm:mx-2 sm:my-4 sm:text-lg sm:block sm:text-center;
+    @apply px-6 py-3 text-lg font-medium cursor-pointer relative
+          bg-black bg-opacity-30 border-2 border-transparent rounded-lg
+          transition-all duration-300 hover:text-neon-red hover:border-neon-red
+          hover:shadow-lg hover:shadow-neon-red/50;
+    @apply sm:mx-2 sm:my-2;
+  }
+
+  .tab-links.active-link {
+    @apply border-neon-green text-neon-green shadow-lg shadow-neon-green/50;
   }
 
   .tab-contents {
@@ -56,7 +62,7 @@
   }
 
   .tab-contents.active-tab {
-    @apply block;
+    @apply block animate-fade-in;
   }
 
   .inside-tab {
@@ -82,24 +88,151 @@
           transition-all duration-300 hover:bg-left hover:border-neon-red;
   }
 
+  .modern-btn {
+    @apply inline-flex items-center px-8 py-4 bg-gradient-to-r from-neon-green to-green-400
+          text-black font-bold rounded-lg shadow-lg shadow-neon-green/50
+          hover:shadow-xl hover:shadow-neon-green/70 hover:scale-105
+          transition-all duration-300 text-lg;
+  }
+
+  .modern-btn-outline {
+    @apply inline-flex items-center px-8 py-4 border-2 border-neon-green
+          text-neon-green font-bold rounded-lg
+          hover:bg-neon-green hover:text-black hover:shadow-lg hover:shadow-neon-green/50
+          transition-all duration-300 text-lg;
+  }
+
+  .glass-card {
+    @apply bg-black bg-opacity-30 backdrop-blur-sm border border-gray-700
+          rounded-lg transition-all duration-300
+          hover:bg-opacity-40 hover:border-neon-green hover:shadow-lg;
+  }
+
+  .skill-card {
+    @apply glass-card p-4 hover:scale-[1.02] hover:shadow-neon-green/30;
+  }
+
+  .skill-bar {
+    @apply w-full h-2 bg-gray-800 rounded-full overflow-hidden;
+  }
+
+  .skill-progress {
+    @apply h-full bg-gradient-to-r from-neon-green to-neon-red
+          rounded-full animate-skill-fill;
+  }
+
   .social-links {
     @apply space-y-2;
   }
 
   .project-card {
-    @apply border border-neon-green rounded-lg p-4 mb-4
-          bg-black bg-opacity-50 hover:bg-opacity-70
+    @apply border border-neon-green rounded-lg p-6 mb-4
+          bg-black bg-opacity-40 backdrop-blur-sm
+          hover:bg-opacity-60 hover:border-neon-red hover:shadow-lg
+          hover:shadow-neon-green/30 hover:scale-[1.02]
           transition-all duration-300;
+  }
+
+  .scroll-to-top {
+    @apply fixed bottom-8 right-8 bg-neon-green text-black p-4 rounded-full
+          shadow-lg shadow-neon-green/50 opacity-0 pointer-events-none
+          transition-all duration-300 hover:scale-110 hover:shadow-xl
+          hover:shadow-neon-green/70 z-50;
+  }
+
+  .scroll-to-top.visible {
+    @apply opacity-100 pointer-events-auto;
+  }
+
+  .text-gradient {
+    background-size: 200% auto;
   }
 }
 
 /* Custom utilities */
 @layer utilities {
   .text-neon-glow {
-    text-shadow: 0 0 10px #00ff22;
+    text-shadow: 0 0 10px #00ff22, 0 0 20px #00ff22, 0 0 30px #00ff22;
   }
 
   .border-neon-glow {
-    box-shadow: 0 0 10px #00ff22;
+    box-shadow: 0 0 10px #00ff22, 0 0 20px #00ff22;
+  }
+
+  /* Fade-in animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes skillFill {
+    from {
+      width: 0;
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .animate-fade-in-up-delay-1 {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+  }
+
+  .animate-fade-in-up-delay-2 {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+  }
+
+  .animate-fade-in-up-delay-3 {
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+
+  .animate-skill-fill {
+    animation: skillFill 1.5s ease-out;
+  }
+
+  /* Scroll-triggered fade-in */
+  .fade-in-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

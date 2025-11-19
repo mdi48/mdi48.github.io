@@ -9,6 +9,11 @@
     <meta name="author" content="Max Dickson">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body class="bg-black text-white">
@@ -35,8 +40,22 @@
         </div>
 
         <div class="header-text">
-            <p class="transition duration-300 ease-in-out hover:text-red-500 text-2xl font-bold"><strong>Developer</strong></p>
-            <h1 class="text-4xl md:text-6xl mt-8">Hi, My name is <span class="transition ease-in-out duration-300 hover:text-red-500">Max Dickson</span>,<br> a software engineer from Christchurch, NZ</h1>
+            <p class="animate-fade-in-up text-xl md:text-2xl font-bold tracking-wider mb-4 opacity-80"><strong>SOFTWARE ENGINEER</strong></p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl mt-4 mb-6 leading-tight animate-fade-in-up-delay-1">
+                Hi, I'm <span class="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-neon-green via-green-400 to-neon-red animate-gradient">Max Dickson</span>
+            </h1>
+            <p class="text-lg md:text-xl lg:text-2xl mt-4 opacity-90 animate-fade-in-up-delay-2">Cool stuff straight outta Christchurch, NZ</p>
+            <div class="mt-8 flex flex-wrap gap-4 animate-fade-in-up-delay-3">
+                <a href="#about" class="modern-btn">
+                    <span>Explore My Work</span>
+                    <svg class="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </a>
+                <a href="#contact" class="modern-btn-outline">
+                    <span>Get In Touch</span>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -45,53 +64,235 @@
     <section class="text-white border-t-4 border-solid border-neon-green py-20" id="about">
         <div class="container mx-auto p-10 overflow-hidden">
             <div class="flex flex-wrap justify-between items-start gap-8">
-                <div class="w-full lg:w-[35%]">
-                    <img class="w-full border-4 border-solid border-neon-green rounded-2xl shadow-lg" src="images/me.jpg" alt="Max Dickson - Software Developer"> <!-- Need to find a more recent pic of me that I don't hate -->
+                <div class="w-full lg:w-[35%] fade-in-scroll">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-neon-green to-neon-red rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                        <img class="relative w-full border-4 border-solid border-neon-green rounded-2xl shadow-lg" src="images/me.jpg" alt="Max Dickson - Software Developer">
+                    </div>
                 </div>
-                <div class="w-full lg:w-[60%]">
-                    <h2 class="text-4xl font-bold text-white text-center pb-8">About Me</h2>
-                    <p class="text-xl md:text-2xl text-white pb-8 leading-relaxed">Hi, my name is Max. I am an aspiring software developer from Christchurch, New Zealand.
-                        Armed with a Bachelor of Science majoring in Computer Science (with a minor in Philosophy),
-                        I am now looking to start my career in the tech industry. I am passionate about computers and technology,
-                        and I am always excited to learn new things. Outside of programming, my passions include music,
-                        cinema, philosophy, and gaming. I believe that a healthy and open-minded approach is key to success in the
-                        increasingly fast-paced tech world, and I am always looking for ways to improve myself and refine my skills.
-                    </p>
+                <div class="w-full lg:w-[60%] fade-in-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white text-center pb-8">
+                        <span class="inline-block border-b-4 border-neon-green pb-2">About Me</span>
+                    </h2>
+                    <div class="glass-card p-6 mb-8">
+                        <p class="text-lg md:text-xl text-white leading-relaxed mb-4">
+                            Hi, my name is Max. I am an aspiring software developer from Christchurch, New Zealand.
+                            Armed with a <span class="text-neon-green font-semibold">Bachelor of Science</span> majoring in Computer Science (with a minor in Philosophy),
+                            I am now looking to start my career in the tech industry.
+                        </p>
+                        <p class="text-lg md:text-xl text-white leading-relaxed">
+                            I am passionate about computers and technology, and I am always excited to learn new things. 
+                            Outside of programming, my passions include <span class="text-neon-green">music, cinema, philosophy, and gaming</span>. 
+                            I believe that a healthy and open-minded approach is key to success in the increasingly fast-paced tech world, 
+                            and I am always looking for ways to improve myself and refine my skills.
+                        </p>
+                    </div>
                     <div class="flex flex-wrap justify-center gap-4 mb-8">
-                        <button class="tab-links active-link font-bold" onclick="tabOpen('skills', event)" role="tab" aria-selected="true">Skills</button>
-                        <button class="tab-links font-bold" onclick="tabOpen('education', event)" role="tab" aria-selected="false">Education</button>
-                        <button class="tab-links font-bold" onclick="tabOpen('experience', event)" role="tab" aria-selected="false">Experience</button>
+                        <button class="tab-links active-link font-bold" onclick="tabOpen('skills', event)" role="tab" aria-selected="true">
+                            <span>💻</span> Skills
+                        </button>
+                        <button class="tab-links font-bold" onclick="tabOpen('education', event)" role="tab" aria-selected="false">
+                            <span>🎓</span> Education
+                        </button>
+                        <button class="tab-links font-bold" onclick="tabOpen('experience', event)" role="tab" aria-selected="false">
+                            <span>💼</span> Experience
+                        </button>
                     </div>
                     <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li class="inside-tab"><span>HTML / CSS</span><br><p class="subset-skills">UI/UX Design, Tailwind.css</p></li>
-                            <li class="inside-tab"><span>JavaScript</span><br><p class="subset-skills">React, Node.js, TypeScript, Next.js</p></li>
-                            <li class="inside-tab"><span>Python</span><br><p class="subset-skills">Django</p></li>
-                            <li class="inside-tab"><span>Java</span><br><p class="subset-skills">Software Development</p></li>
-                            <li class="inside-tab"><span>SQL</span><br><p class="subset-skills">Database Management</p></li>
-                            <li class="inside-tab"><span>MongoDB</span><br><p class="subset-skills">Document Databases</p></li>
-                            <li class="inside-tab"><span>Git</span><br><p class="subset-skills">Version Control</p></li>
-                            <li class="inside-tab"><span>Agile</span><br><p class="subset-skills">Project Management</p></li>
-                            <li class="inside-tab"><span>Windows / Linux (Ubuntu, Mint)</span><br><p class="subset-skills">Operating Systems, Command Line</p></li>
-                            <li class="inside-tab"><span>Terminal</span><br><p class="subset-skills">Bash, PowerShell</p></li>
-                            <li class="inside-tab"><span>Prolog</span><br><p class="subset-skills">Declarative Programming</p></li>
-                        </ul>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="skill-card">
+                                <div class="flex items-start mb-3">
+                                    <span class="text-neon-green font-bold text-xl mr-3">🎨</span>
+                                    <div class="flex-1">
+                                        <h4 class="text-neon-green font-bold text-lg mb-2">HTML / CSS & Tailwind</h4>
+                                        <p class="text-md opacity-90 leading-relaxed">
+                                            Built responsive, modern web interfaces including this portfolio site, and Mnemosyne. 
+                                            Skilled in Tailwind CSS for rapid UI development and custom CSS for unique designs.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="flex items-start mb-3">
+                                    <span class="text-neon-green font-bold text-xl mr-3">⚡</span>
+                                    <div class="flex-1">
+                                        <h4 class="text-neon-green font-bold text-lg mb-2">JavaScript & TypeScript</h4>
+                                        <p class="text-md opacity-90 leading-relaxed">
+                                            Developed full-stack applications using React for dynamic UIs, Node.js/Express for REST APIs, 
+                                            and Next.js for the FoodFinder app with GraphQL integration. Comfortable with modern ES6+ features and TypeScript for type safety.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="flex items-start mb-3">
+                                    <span class="text-neon-green font-bold text-xl mr-3">🐍</span>
+                                    <div class="flex-1">
+                                        <h4 class="text-neon-green font-bold text-lg mb-2">Python</h4>
+                                        <p class="text-md opacity-90 leading-relaxed">
+                                            Built a Flappy Bird clone using the NEAT neural network algorithm to explore machine learning concepts. 
+                                            Also tutored high school students in Python fundamentals, helping them build a foundation before university.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="flex items-start mb-3">
+                                    <span class="text-neon-green font-bold text-xl mr-3">☕</span>
+                                    <div class="flex-1">
+                                        <h4 class="text-neon-green font-bold text-lg mb-2">Java</h4>
+                                        <p class="text-md opacity-90 leading-relaxed">
+                                            Used extensively during university coursework for object-oriented programming projects, data structures, 
+                                            algorithms implementation, and software design patterns. Utilized in the development of Sports Tournament.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="flex items-start mb-3">
+                                    <span class="text-neon-green font-bold text-xl mr-3">🗄️</span>
+                                    <div class="flex-1">
+                                        <h4 class="text-neon-green font-bold text-lg mb-2">SQL & Database Management</h4>
+                                        <p class="text-md opacity-90 leading-relaxed">
+                                            Implemented relational databases using MySQL, PostgreSQL, and SQLite for various projects. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="flex items-start mb-3">
+                                    <span class="text-neon-green font-bold text-xl mr-3">🍃</span>
+                                    <div class="flex-1">
+                                        <h4 class="text-neon-green font-bold text-lg mb-2">MongoDB</h4>
+                                        <p class="text-md opacity-90 leading-relaxed">
+                                            Worked with NoSQL document databases for projects requiring flexible schemas. 
+                                            Integrated MongoDB with Node.js applications for efficient data storage and retrieval.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="flex items-start mb-3">
+                                    <span class="text-neon-green font-bold text-xl mr-3">🔱</span>
+                                    <div class="flex-1">
+                                        <h4 class="text-neon-green font-bold text-lg mb-2">Git & Version Control</h4>
+                                        <p class="text-md opacity-90 leading-relaxed">
+                                            Maintained all projects on Github primarily as monorepos.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="flex items-start mb-3">
+                                    <span class="text-neon-green font-bold text-xl mr-3">🐧</span>
+                                    <div class="flex-1">
+                                        <h4 class="text-neon-green font-bold text-lg mb-2">Linux & Terminal</h4>
+                                        <p class="text-md opacity-90 leading-relaxed">
+                                            Daily driver of the CachyOS flavour of Arch Linux, with addition skill in Debian. Proficient with terminal workflows using Bash, ZSH, and Fish shells. 
+                                            Comfortable with package management, and shell scripting.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="flex items-start mb-3">
+                                    <span class="text-neon-green font-bold text-xl mr-3">🐳</span>
+                                    <div class="flex-1">
+                                        <h4 class="text-neon-green font-bold text-lg mb-2">Docker & DevOps</h4>
+                                        <p class="text-md opacity-90 leading-relaxed">
+                                            Containerized the FoodFinder application using Docker for consistent development and deployment environments. 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="flex items-start mb-3">
+                                    <span class="text-neon-green font-bold text-xl mr-3">🔍</span>
+                                    <div class="flex-1">
+                                        <h4 class="text-neon-green font-bold text-lg mb-2">Prolog & Logic Programming</h4>
+                                        <p class="text-md opacity-90 leading-relaxed">
+                                            Studied declarative programming paradigms through university coursework. 
+                                            Used Prolog for solving complex logical problems and understanding alternative programming approaches.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-contents" id="education">
-                        <ul>
-                            <li class="inside-tab"><span>2020-2024</span><br>University of Canterbury - Bachelor of Science (Major: Computer Science, Minor: Philosophy)</li>
-                            <li class="inside-tab"><span>2017-2018</span><br>Hagley College - NCEA Level 3</li>
-                        </ul>
+                        <div class="space-y-4">
+                            <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-neon-green font-bold text-xl mr-2">🎓</span>
+                                    <span class="text-neon-green font-bold text-lg">2020-2024</span>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2">Bachelor of Science</h4>
+                                <p class="text-lg">University of Canterbury</p>
+                                <p class="text-md opacity-80 mt-2">Major: Computer Science • Minor: Philosophy</p>
+                            </div>
+                            <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-neon-green font-bold text-xl mr-2">📚</span>
+                                    <span class="text-neon-green font-bold text-lg">2017-2018</span>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2">NCEA Level 3</h4>
+                                <p class="text-lg">Hagley College</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-contents" id="experience">
-                        <ul>
-                            <li class="inside-tab"><span>Freelance Web Developer (Fiverr)</span><br>From October 2024 to mid-January 2025 I briefly worked as a freelancer for clients as a means of keeping myself occupied while also making money.
-                                I decided to discontinue this as I found there were not enough clients willing to pay for my services.</span></li>
-                            <li class="inside-tab"><span>Tutor</span><br>I spent the summer of 2021 to 2022 tutoring high schoolers in basic Python programming so that they could have a
-                                basic understanding of programming before starting their first year of university.</li>
-                            <li class="inside-tab"><span>Volunteer</span><br>I spent 2019 to 2020 doing volunteer work at Creative Junk, an arts and crafts store.
-                                This role had me cleaning, unloading and packing supplies, and aiding customers at Creative Junk until COVID-19 hit.</li>
-                        </ul>
+                        <div class="space-y-4">
+                            <div class="glass-card p-6 border-l-4 border-neon-red hover:scale-[1.02] transition-transform">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-neon-red font-bold text-xl mr-2">💻</span>
+                                    <span class="text-neon-red font-bold text-lg">November 2025 - Present</span>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2">Volunteer IT Worker</h4>
+                                <p class="text-md opacity-90 italic mb-2">TechMate</p>
+                                <p class="text-md opacity-80">
+                                    I am currently a volunteer IT worker at TechMate, a community organisation that provides affordable
+                                    access to information and communication technologies. I primarily aid citizens with technical support,
+                                    teaching basic computer literacy, and assisting with hardware and software issues including setup, repairs,
+                                    and maintenance.
+                                    
+                                </p>
+                            </div>
+                            <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-neon-green font-bold text-xl mr-2">💻</span>
+                                    <span class="text-neon-green font-bold text-lg">Oct 2024 - Jan 2025</span>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2">Freelance Web Developer</h4>
+                                <p class="text-md opacity-90 italic mb-2">Fiverr</p>
+                                <p class="text-md opacity-80">
+                                    Worked as a freelancer for clients as a means of keeping myself occupied while also making money. 
+                                    Decided to discontinue as I found there were not enough clients willing to pay for my services.
+                                </p>
+                            </div>
+                            <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-neon-green font-bold text-xl mr-2">👨‍🏫</span>
+                                    <span class="text-neon-green font-bold text-lg">Summer 2021-2022</span>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2">Python Programming Tutor</h4>
+                                <p class="text-md opacity-80">
+                                    Tutored high schoolers in basic Python programming to provide them with a foundational 
+                                    understanding of programming before starting their first year of university.
+                                </p>
+                            </div>
+                            <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-neon-green font-bold text-xl mr-2">🤝</span>
+                                    <span class="text-neon-green font-bold text-lg">2019-2020</span>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2">Volunteer</h4>
+                                <p class="text-md opacity-90 italic mb-2">Creative Junk</p>
+                                <p class="text-md opacity-80">
+                                    Volunteer work at an arts and crafts store. Responsibilities included cleaning, 
+                                    unloading and packing supplies, and aiding customers until COVID-19 hit.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -135,7 +336,7 @@
                                 <span class="text-neon-green mr-2">🐙</span> GitHub
                             </a></li>
                             <li><a href="https://flowcv.com/resume/8w8qflfn4o" target="_blank" rel="noopener" class="header-links flex items-center">
-                                <span class="text-neon-green mr-2">📄</span> My Resume
+                                <span class="text-neon-green mr-2">📄</span> My Resume (Currently out of date!!!)
                             </a></li>
                         </ul>
                     </div>
@@ -157,15 +358,44 @@
                 <div class="w-full lg:w-1/2">
                     <h3 class="text-2xl font-bold text-neon-green mb-6">Featured Projects</h3>
                     <div class="mb-6 p-4 bg-gray-900 bg-opacity-50 rounded-lg border border-gray-700">
-                        <p class="text-white text-sm italic">Please note that I do not find as much time to work on projects as I would like due to depression leading to frequent cases of "coder's block". I find it easier to perform commissioned projects or collaborative ones because of this. I hope you understand.</p>
+                        <p class="text-sm italic">
+                            Please note that I do not find as much time to work on projects as I would like due to depression leading to frequent cases of "coder's block".
+                            I also have a habit of deleting or removing projects that I am dissatisfied with (my therapist believes this may be a form of self-sabotage
+                            and it is something I am trying to stop doing). I find it easier to perform commissioned projects or collaborative ones because of this. I hope you understand.</p>
                     </div>
 
                     <div class="space-y-6">
+
+                        <div class="project-card">
+                            <h4 class="text-xl font-bold mb-2">
+                                <a href="https://github.com/mdi48/mnemosyne" target="_blank" rel="noopener" class="text-neon-red" hover:underline transition-colors>Mnemosyne</a>
+                            </h4>
+                            <p>
+                                My current personal project: a full-stack quotes and aphorisms web app built with React on the frontend and Node.js, Express, and SQLite on the backend.
+                                It allows users to browse, search, and save their favorite quotes from many great writers, philosophers, and political figures
+                                throughout history. The app features a sleek, glassmorphism-inspired design with a focus on usability and accessibility, along with
+                                full CRUD operations via a RESTful API. My main goal with this project is to improve my skills in full-stack web development, and to create something that
+                                inspires and motivates others and encourages them to read more.
+                            </p>
+                        </div>
+
+                        <div class="project-card">
+                            <h4 class="text-xl font-bold mb-2">
+                                <a href="https://github.com/mdi48/The-Sneed-Programming-Language" target="_blank" rel="noopener" class="text-neon-red" hover:underline transition-colors>The Sneed Programming Language</a>
+                            </h4>
+                            <p>
+                                A programming language I created as a fun side project to learn more about compilers and interpreters. 
+                                It is a simplified LISP dialect written in C, but comes packed with all (that's a lie, it's a tiny language after all :P) you need to program whatever you want,
+                                including functions, basic data types, and mathematical operations. The language's name is a pun combining a <a href="https://simpsons.fandom.com/wiki/Sneed's_Feed_%26_Seed" target="_blank" rel="noopener" class="text-neon-green">popular joke from The Simpsons</a>,
+                                and the popular programming language book <a href="https://en.wikipedia.org/wiki/The_C_Programming_Language" target="_blank" rel="noopener" class="text-neon-green">The C Programming Language</a>.
+                            </p>
+                        </div>
+
                         <div class="project-card">
                             <h4 class="text-xl font-bold mb-2">
                                 <a href="https://github.com/mdi48/FlappAI-Bird" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">FlappAI-Bird</a>
                             </h4>
-                            <p class="text-white">A Flappy Bird clone that utilizes the NEAT neural network algorithm to learn from the mistakes of its previous attempts. This was done as a way of familiarizing myself with the basics of neural networks and aspects of machine learning in Python.</p>
+                            <p>A Flappy Bird clone that utilizes the NEAT neural network algorithm to learn from the mistakes of its previous attempts. This was done as a way of familiarizing myself with the basics of neural networks and aspects of machine learning in Python.</p>
                             <div class="mt-2">
                                 <span class="inline-block bg-neon-green text-black text-xs px-2 py-1 rounded mr-2">Python</span>
                                 <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded mr-2">Machine Learning</span>
@@ -175,21 +405,9 @@
 
                         <div class="project-card">
                             <h4 class="text-xl font-bold mb-2">
-                                <a href="https://github.com/mdi48/research-blog" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Research Blog</a>
-                            </h4>
-                            <p class="text-white">This was a project that was planned to be for a blog that some friends and I were going to be running on philosophy. It has been abandoned for now as it was felt that a podcast would be a better medium for this kind of content; however the code for what was initially planned is here in case you want to examine it.</p>
-                            <div class="mt-2">
-                                <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded mr-2">Node.js</span>
-                                <span class="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded mr-2">React</span>
-                                <span class="inline-block bg-gray-600 text-white text-xs px-2 py-1 rounded">Blog</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <h4 class="text-xl font-bold mb-2">
                                 <a href="https://github.com/mdi48/FoodFinder" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">FoodFinder</a>
                             </h4>
-                            <p class="text-white">A project I made to get some experience working with Next and Docker. It utilizes JS Web Tokens and GraphQL to allow users to search for places to eat.</p>
+                            <p>A project I made to get some experience working with Next and Docker. It utilizes JS Web Tokens and GraphQL to allow users to search for places to eat.</p>
                             <div class="mt-2">
                                 <span class="inline-block bg-gray-900 text-white text-xs px-2 py-1 rounded mr-2">Next.js</span>
                                 <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded mr-2">Docker</span>
@@ -201,7 +419,7 @@
                             <h4 class="text-xl font-bold mb-2">
                                 <a href="https://github.com/mdi48/petition-site-backend" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Petition Site (Backend)</a>
                             </h4>
-                            <p class="text-white">The backend of a petition site that was developed for the University of Canterbury's SENG365 course. Received a mark of 86/100.</p>
+                            <p>The backend of a petition site that was developed for the University of Canterbury's SENG365 course. Received a mark of 86/100.</p>
                             <div class="mt-2">
                                 <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded mr-2">Node.js</span>
                                 <span class="inline-block bg-orange-600 text-white text-xs px-2 py-1 rounded mr-2">Express</span>
@@ -213,7 +431,7 @@
                             <h4 class="text-xl font-bold mb-2">
                                 <a href="https://github.com/mdi48/petition-site-frontend--unfinished--" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Petition Site (Frontend)</a>
                             </h4>
-                            <p class="text-white">The (React) frontend of the petition site mentioned above. Unfortunately this was not finished to the standard I wanted it to be due to an ongoing personal crisis causing a great deal of stress.</p>
+                            <p>The (React) frontend of the petition site mentioned above. Unfortunately this was not finished to the standard I wanted it to be due to an ongoing personal crisis causing a great deal of stress.</p>
                             <div class="mt-2">
                                 <span class="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded mr-2">React</span>
                                 <span class="inline-block bg-red-500 text-white text-xs px-2 py-1 rounded">Unfinished</span>
@@ -224,7 +442,7 @@
                             <h4 class="text-xl font-bold mb-2">
                                 <a href="#" class="text-neon-red hover:underline transition-colors">This Portfolio Site</a>
                             </h4>
-                            <p class="text-white">The website you're currently looking at! Built with modern web technologies and responsive design principles.</p>
+                            <p>The website you're currently looking at! Built with modern web technologies and responsive design principles.</p>
                             <div class="mt-2">
                                 <span class="inline-block bg-orange-600 text-white text-xs px-2 py-1 rounded mr-2">HTML5</span>
                                 <span class="inline-block bg-cyan-500 text-white text-xs px-2 py-1 rounded mr-2">Tailwind CSS</span>
@@ -238,11 +456,19 @@
         </div>
     </section>
 
-    <footer class="bg-neon-green text-black text-center px-10 py-4 w-full">
-        <p class="font-bold">
+    <footer class="bg-neon-green text-black text-center px-10 py-6 w-full">
+        <p class="font-bold text-lg">
             &copy; 2025 Max Dickson. All rights reserved.
         </p>
+        <p class="text-sm mt-2 opacity-80">Built with.... something</p>
     </footer>
+
+    <!-- Scroll to top button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
 </body>
 <script src="script.js"></script>
 </html>
