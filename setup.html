@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Setup - Max Dickson</title>
+    <meta charset="utf-8">
+    <meta lang="en">
+    <meta name="keywords" content="Max Dickson, setup, hardware, software, tools, development environment">
+    <meta name="description" content="Max Dickson's hardware and software setup">
+    <meta name="author" content="Max Dickson">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white">
+    
+    <!-- Navigation -->
+    <nav class="border-b-2 md:border-b-4 border-neon-green bg-black bg-opacity-90 sticky top-0 z-50">
+        <div class="container mx-auto px-4 md:px-10 py-2 md:py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-neon-green text-lg md:text-2xl font-bold hover:text-neon-red transition-colors">
+                    MD
+                </a>
+                
+                <!-- Hamburger Menu Button -->
+                <button class="md:hidden text-neon-green hover:text-neon-red transition-colors" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex gap-4 text-base">
+                    <li><a href="index.html" class="header-links">Home</a></li>
+                    <li><a href="index.html#about" class="header-links">About</a></li>
+                    <li><a href="interests.html" class="header-links">Interests</a></li>
+                    <li><a href="setup.html" class="header-links text-neon-red">Setup</a></li>
+                    <li><a href="index.html#projects" class="header-links">Projects</a></li>
+                    <li><a href="index.html#contact" class="header-links">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <ul id="mobile-menu" class="hidden md:hidden flex-col gap-3 pt-4 pb-2 text-base">
+                <li><a href="index.html" class="header-links block py-2">Home</a></li>
+                <li><a href="index.html#about" class="header-links block py-2">About</a></li>
+                <li><a href="interests.html" class="header-links block py-2">Interests</a></li>
+                <li><a href="setup.html" class="header-links text-neon-red block py-2">Setup</a></li>
+                <li><a href="index.html#projects" class="header-links block py-2">Projects</a></li>
+                <li><a href="index.html#contact" class="header-links block py-2">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="container mx-auto px-10 py-20">
+        <h1 class="text-5xl md:text-6xl font-bold text-center mb-6">
+            <span class="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-neon-green via-green-400 to-neon-red animate-gradient">
+                My Setup
+            </span>
+        </h1>
+        <p class="text-xl text-center opacity-80 max-w-3xl mx-auto">
+            The hardware and software I use daily to build, create, and explore
+        </p>
+    </section>
+
+    <!-- Tabbed Setup Section -->
+    <section class="container mx-auto px-10 py-12 pb-20">
+        <div class="glass-card p-8 fade-in-scroll">
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="tab-links active-link font-bold" onclick="tabOpen('hardware', event)" role="tab" aria-selected="true">
+                    <span>💻</span> Hardware
+                </button>
+                <button class="tab-links font-bold" onclick="tabOpen('software', event)" role="tab" aria-selected="false">
+                    <span>⚙️</span> Software
+                </button>
+                <button class="tab-links font-bold" onclick="tabOpen('tools', event)" role="tab" aria-selected="false">
+                    <span>🛠️</span> Tools
+                </button>
+            </div>
+
+            <!-- Hardware Tab -->
+            <div class="tab-contents active-tab" id="hardware">
+                <div class="space-y-8">
+                    <!-- Main Machine -->
+                    <div class="glass-card p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🖥️</span>
+                            <h3 class="text-2xl font-bold text-neon-green">Main Machine</h3>
+                        </div>
+                        <div class="space-y-2 text-lg opacity-90">
+                            <p><span class="text-neon-green font-semibold">• CPU:</span> 13th Gen Intel Core i5-13500</p>
+                            <p><span class="text-neon-green font-semibold">• GPU:</span> Nvidia GeForce RTX 4070</p>
+                            <p><span class="text-neon-green font-semibold">• RAM:</span> 32 GB</p>
+                            <p><span class="text-neon-green font-semibold">• Storage:</span> 2 TB internal SSD + lots of external storage</p>
+                            <p><span class="text-neon-green font-semibold">• Motherboard:</span> Can't remember it specifically but it's an MSI board</p>
+                        </div>
+                    </div>
+
+                    <!-- Peripherals -->
+                    <div class="glass-card p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">⌨️</span>
+                            <h3 class="text-2xl font-bold text-neon-green">Peripherals</h3>
+                        </div>
+                        <div class="space-y-2 text-lg opacity-90">
+                            <p><span class="text-neon-green font-semibold">• Keyboard:</span> Logitech G915 X LS TKL</p>
+                            <p><span class="text-neon-green font-semibold">• Mouse:</span> Logitech G502 X Plus</p>
+                            <p><span class="text-neon-green font-semibold">• Monitor:</span> AOC 27" 1440p @ 155 Hz + Asus 23" 1080p @ 60 Hz</p>
+                            <p><span class="text-neon-green font-semibold">• Headphones:</span> Audio Technica ATH-M50x on my desktop, Sony WH-1000XM4 when I'm out and about</p>
+                            <p><span class="text-neon-green font-semibold">• Microphone:</span> Blue Yeti</p>
+                        </div>
+                    </div>
+
+                    <!-- Laptop -->
+                    <div class="glass-card p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">💻</span>
+                            <h3 class="text-2xl font-bold text-neon-green">Laptop</h3>
+                        </div>
+                        <div class="space-y-2 text-lg opacity-90">
+                            <p><span class="text-neon-green font-semibold">• Model:</span> Acer Swift from 2020</p>
+                            <p><span class="text-neon-green font-semibold">• OS:</span> NixOS (currently giving it a shot. I distro hop often)</p>
+                            <p><span class="text-neon-green font-semibold">• CPU:</span> Uhhhhhh... some Qualcomm cpu iirc</p>
+                            <p><span class="text-neon-green font-semibold">• RAM:</span> 16 GB</p>
+                            <p><span class="text-neon-green font-semibold">• Storage:</span> 512 GB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Software Tab -->
+            <div class="tab-contents" id="software">
+                <div class="space-y-8">
+                    <!-- Operating System -->
+                    <div class="glass-card p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">🐧</span>
+                            <h3 class="text-2xl font-bold text-neon-green">Desktop OS & Basic Stuff</h3>
+                        </div>
+                        <div class="space-y-2 text-lg opacity-90">
+                            <p><span class="text-neon-green font-semibold">• Primary OS:</span> Arch Linux (btw). CachyOS is my current flavour of choice</p>
+                            <p><span class="text-neon-green font-semibold">• Desktop Environment:</span> KDE Plasma 6 (In the war between KDE and GNOME, I'm ride or die for KDE)</p>
+                            <p><span class="text-neon-green font-semibold">• Shell:</span> ZSH with Oh My Zsh</p>
+                            <p><span class="text-neon-green font-semibold">• Terminal:</span> Ghostty</p>
+                        </div>
+                    </div>
+
+                    <!-- Development Tools -->
+                    <div class="glass-card p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="text-3xl mr-3">📝</span>
+                            <h3 class="text-2xl font-bold text-neon-green">Development Tools</h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg opacity-90">
+                            <div>
+                                <p class="text-neon-red font-semibold mb-2">Code Editor:</p>
+                                <ul class="space-y-1">
+                                    <li>• VS Code (primary)</li>
+                                    <li>• Intellij Idea (for Java)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="text-neon-red font-semibold mb-2">Version Control:</p>
+                                <ul class="space-y-1">
+                                    <li>• Git (command line)</li>
+                                    <li>• GitHub</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="text-neon-red font-semibold mb-2">Web Development:</p>
+                                <ul class="space-y-1">
+                                    <li>• Node.js & npm (one day I'll switch to Bun)</li>
+                                    <li>• React DevTools</li>
+                                    <li>• Chromium DevTools</li>
+                                    <li>• Vite</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="text-neon-red font-semibold mb-2">Other Tools:</p>
+                                <ul class="space-y-1">
+                                    <li>• Docker</li>
+                                    <li>• Postman</li>
+                                    <li>• ESLint</li>
+                                    <li>• Relational Databases (Usually SQLite)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Tools Tab -->
+            <div class="tab-contents" id="tools">
+                
+                <!-- Productivity Tools Section -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-neon-red mb-6">Productivity & Daily Drivers</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Browsers -->
+                        <div class="glass-card p-6">
+                            <h3 class="text-xl font-bold text-neon-green mb-3">🌐 Browsers</h3>
+                            <ul class="space-y-2 opacity-90">
+                                <li>• <span class="font-semibold">Zen</span> (primary)</li>
+                                <li>• Chromium (if I need to use a Blink-based browser)</li>
+                                <li>• UBlock Origin Extension</li>
+                            </ul>
+                        </div>
+
+                        <!-- Note Taking -->
+                        <div class="glass-card p-6">
+                            <h3 class="text-xl font-bold text-neon-green mb-3">📝 Note Taking</h3>
+                            <ul class="space-y-2 opacity-90">
+                                <li>• Obsidian (plus SyncThing for syncing)</li>
+                                <li>• Notion</li>
+                                <li>• LaTeX (for more advanced note formatting)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Communication -->
+                        <div class="glass-card p-6">
+                            <h3 class="text-xl font-bold text-neon-green mb-3">💬 Communication</h3>
+                            <ul class="space-y-2 opacity-90">
+                                <li>• Discord (don't ask me for it, I use this for my personal life)</li>
+                                <li>• Signal (go ahead here 😁)</li>
+
+                            </ul>
+                        </div>
+
+                        <!-- Music & Media -->
+                        <div class="glass-card p-6">
+                            <h3 class="text-xl font-bold text-neon-green mb-3">🎵 Music & Media</h3>
+                            <ul class="space-y-2 opacity-90">
+                                <li>• Spotify</li>
+                                <li>• VLC Media Player (my go-to for video playback. I will never use MPV sorry lol)</li>
+                                <li>• Poweramp (my preferred music player on mobile, and one of the few times I'd recommend purchasing something like a media player. It's that good.)</li>
+                                <li>• Jellyfin (self-hosted media server. I mostly just use this to watch stuff stored on my external drives in bed lol)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Learning -->
+                        <div class="glass-card p-6">
+                            <h3 class="text-xl font-bold text-neon-green mb-3">📚 Learning</h3>
+                            <ul class="space-y-2 opacity-90">
+                                <li>• Documentation sites</li>
+                                <li>• Stack Overflow</li>
+                                <li>• YouTube tutorials</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Note at bottom -->
+            <div class="mt-12 p-6 bg-black bg-opacity-30 rounded-lg border-l-4 border-neon-green">
+                <p class="text-lg opacity-90 leading-relaxed">
+                    <span class="text-neon-green font-bold">Note:</span> This setup is always evolving so it
+                    will likely be out of date a lot! I'm constantly experimenting with new tools and
+                    configurations to improve my workflow, so feel free to reach out if you have recommendations
+                    or questions about any of these tools.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-neon-green text-black text-center px-10 py-6 w-full">
+        <p class="font-bold text-lg">
+            &copy; 2025 Max Dickson. All rights reserved.
+        </p>
+        <p class="text-sm mt-2 opacity-80">Built with.... something</p>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+</body>
+<script src="script.js"></script>
+</html>

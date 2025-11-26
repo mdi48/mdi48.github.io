@@ -17,35 +17,58 @@
 </head>
 
 <body class="bg-black text-white">
-
-
-    <!--Home-->
-    <div class="w-full background">
-        <div class="px-10 py-[5%] overflow-hidden">
-            <nav class="flex flex-wrap justify-between items-center relative z-50">
-                <button class="menu-icon" onclick="toggleMenu()" aria-label="Toggle navigation menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00ff22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
+    
+    <!-- Navigation -->
+    <nav class="border-b-2 md:border-b-4 border-neon-green bg-black bg-opacity-90 sticky top-0 z-50">
+        <div class="container mx-auto px-4 md:px-10 py-2 md:py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-neon-green text-lg md:text-2xl font-bold hover:text-neon-red transition-colors">
+                    MD
+                </a>
+                
+                <!-- Hamburger Menu Button -->
+                <button class="md:hidden text-neon-green hover:text-neon-red transition-colors" onclick="toggleMenu()" aria-label="Toggle navigation menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
-                <ul class="nav-menu" id="side-menu">
-                    <li class="header-list"><a href="#me" class="header-links">Me</a></li>
-                    <li class="header-list"><a href="#about" class="header-links">About</a></li>
-                    <li class="header-list"><a href="#projects" class="header-links">Projects</a></li>
-                    <li class="header-list"><a href="#contact" class="header-links">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
 
-        <div class="header-text">
-            <p class="animate-fade-in-up text-xl md:text-2xl font-bold tracking-wider mb-4 opacity-80"><strong>SOFTWARE ENGINEER</strong></p>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl mt-4 mb-6 leading-tight animate-fade-in-up-delay-1">
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex gap-4 text-base">
+                    <li><a href="index.html" class="header-links text-neon-red">Home</a></li>
+                    <li><a href="#about" class="header-links">About</a></li>
+                    <li><a href="interests.html" class="header-links">Interests</a></li>
+                    <li><a href="setup.html" class="header-links">Setup</a></li>
+                    <li><a href="#projects" class="header-links">Projects</a></li>
+                    <li><a href="#contact" class="header-links">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <ul id="mobile-menu" class="hidden md:hidden flex-col gap-3 pt-4 pb-2 text-base">
+                <li><a href="index.html" class="header-links text-neon-red block py-2">Home</a></li>
+                <li><a href="#about" class="header-links block py-2" onclick="toggleMenu()">About</a></li>
+                <li><a href="interests.html" class="header-links block py-2">Interests</a></li>
+                <li><a href="setup.html" class="header-links block py-2">Setup</a></li>
+                <li><a href="#projects" class="header-links block py-2" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" class="header-links block py-2" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-10 py-20 min-h-[70vh] flex items-center">
+        <div class="w-full">
+            <p class="animate-fade-in-up text-xl md:text-2xl font-bold tracking-wider mb-4 opacity-80 text-center">
+                <strong>SOFTWARE ENGINEER</strong>
+            </p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl mt-4 mb-6 leading-tight animate-fade-in-up-delay-1 text-center">
                 Hi, I'm <span class="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-neon-green via-green-400 to-neon-red animate-gradient">Max Dickson</span>
             </h1>
-            <p class="text-lg md:text-xl lg:text-2xl mt-4 opacity-90 animate-fade-in-up-delay-2">Cool stuff straight outta Christchurch, NZ</p>
-            <div class="mt-8 flex flex-wrap gap-4 animate-fade-in-up-delay-3">
+            <p class="text-lg md:text-xl lg:text-2xl mt-4 opacity-90 animate-fade-in-up-delay-2 text-center">
+                Building modern, efficient, and user-friendly software solutions for the world to come
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4 animate-fade-in-up-delay-3">
                 <a href="#about" class="modern-btn">
                     <span>Explore My Work</span>
                     <svg class="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,13 +80,19 @@
                 </a>
             </div>
         </div>
-    </div>
+    </section>
 
 
-    <!--About-->
-    <section class="text-white border-t-4 border-solid border-neon-green py-20" id="about">
-        <div class="container mx-auto p-10 overflow-hidden">
-            <div class="flex flex-wrap justify-between items-start gap-8">
+    <!-- About Section -->
+    <section class="container mx-auto px-10 py-20" id="about">
+        <h2 class="text-5xl md:text-6xl font-bold text-center mb-12">
+            <span class="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-neon-green via-green-400 to-neon-red animate-gradient">
+                About Me
+            </span>
+        </h2>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-wrap justify-between items-start gap-8 mb-12">
                 <div class="w-full lg:w-[35%] fade-in-scroll">
                     <div class="relative group">
                         <div class="absolute -inset-1 bg-gradient-to-r from-neon-green to-neon-red rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
@@ -71,35 +100,38 @@
                     </div>
                 </div>
                 <div class="w-full lg:w-[60%] fade-in-scroll">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white text-center pb-8">
-                        <span class="inline-block border-b-4 border-neon-green pb-2">About Me</span>
-                    </h2>
-                    <div class="glass-card p-6 mb-8">
-                        <p class="text-lg md:text-xl text-white leading-relaxed mb-4">
+                    <div class="glass-card p-8">
+                        <p class="text-lg md:text-xl leading-relaxed mb-4">
                             Hi, my name is Max. I am an aspiring software developer from Christchurch, New Zealand.
                             Armed with a <span class="text-neon-green font-semibold">Bachelor of Science</span> majoring in Computer Science (with a minor in Philosophy),
                             I am now looking to start my career in the tech industry.
                         </p>
-                        <p class="text-lg md:text-xl text-white leading-relaxed">
+                        <p class="text-lg md:text-xl leading-relaxed">
                             I am passionate about computers and technology, and I am always excited to learn new things. 
                             Outside of programming, my passions include <span class="text-neon-green">music, cinema, philosophy, and gaming</span>. 
                             I believe that a healthy and open-minded approach is key to success in the increasingly fast-paced tech world, 
                             and I am always looking for ways to improve myself and refine my skills.
                         </p>
                     </div>
-                    <div class="flex flex-wrap justify-center gap-4 mb-8">
-                        <button class="tab-links active-link font-bold" onclick="tabOpen('skills', event)" role="tab" aria-selected="true">
-                            <span>💻</span> Skills
-                        </button>
-                        <button class="tab-links font-bold" onclick="tabOpen('education', event)" role="tab" aria-selected="false">
-                            <span>🎓</span> Education
-                        </button>
-                        <button class="tab-links font-bold" onclick="tabOpen('experience', event)" role="tab" aria-selected="false">
-                            <span>💼</span> Experience
-                        </button>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <div class="grid grid-cols-1 gap-4">
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button class="tab-links active-link font-bold" onclick="tabOpen('skills', event)" role="tab" aria-selected="true">
+                    <span>💻</span> Skills
+                </button>
+                <button class="tab-links font-bold" onclick="tabOpen('education', event)" role="tab" aria-selected="false">
+                    <span>🎓</span> Education
+                </button>
+                <button class="tab-links font-bold" onclick="tabOpen('experience', event)" role="tab" aria-selected="false">
+                    <span>💼</span> Experience
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-contents active-tab" id="skills">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="skill-card">
                                 <div class="flex items-start mb-3">
                                     <span class="text-neon-green font-bold text-xl mr-3">🎨</span>
@@ -229,83 +261,83 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
-                    <div class="tab-contents" id="education">
-                        <div class="space-y-4">
-                            <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
-                                <div class="flex items-center mb-2">
-                                    <span class="text-neon-green font-bold text-xl mr-2">🎓</span>
-                                    <span class="text-neon-green font-bold text-lg">2020-2024</span>
-                                </div>
-                                <h4 class="text-xl font-semibold mb-2">Bachelor of Science</h4>
-                                <p class="text-lg">University of Canterbury</p>
-                                <p class="text-md opacity-80 mt-2">Major: Computer Science • Minor: Philosophy</p>
-                            </div>
-                            <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
-                                <div class="flex items-center mb-2">
-                                    <span class="text-neon-green font-bold text-xl mr-2">📚</span>
-                                    <span class="text-neon-green font-bold text-lg">2017-2018</span>
-                                </div>
-                                <h4 class="text-xl font-semibold mb-2">NCEA Level 3</h4>
-                                <p class="text-lg">Hagley College</p>
-                            </div>
+                </div>
+            </div>
+
+            <div class="tab-contents" id="education">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
+                        <div class="flex items-center mb-2">
+                            <span class="text-neon-green font-bold text-xl mr-2">🎓</span>
+                            <span class="text-neon-green font-bold text-lg">2020-2024</span>
                         </div>
+                        <h4 class="text-xl font-semibold mb-2">Bachelor of Science</h4>
+                        <p class="text-lg">University of Canterbury</p>
+                        <p class="text-md opacity-80 mt-2">Major: Computer Science • Minor: Philosophy</p>
                     </div>
-                    <div class="tab-contents" id="experience">
-                        <div class="space-y-4">
-                            <div class="glass-card p-6 border-l-4 border-neon-red hover:scale-[1.02] transition-transform">
-                                <div class="flex items-center mb-2">
-                                    <span class="text-neon-red font-bold text-xl mr-2">💻</span>
-                                    <span class="text-neon-red font-bold text-lg">November 2025 - Present</span>
-                                </div>
-                                <h4 class="text-xl font-semibold mb-2">Volunteer IT Worker</h4>
-                                <p class="text-md opacity-90 italic mb-2">TechMate</p>
-                                <p class="text-md opacity-80">
-                                    I am currently a volunteer IT worker at TechMate, a community organisation that provides affordable
-                                    access to information and communication technologies. I primarily aid citizens with technical support,
-                                    teaching basic computer literacy, and assisting with hardware and software issues including setup, repairs,
-                                    and maintenance.
-                                    
-                                </p>
-                            </div>
-                            <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
-                                <div class="flex items-center mb-2">
-                                    <span class="text-neon-green font-bold text-xl mr-2">💻</span>
-                                    <span class="text-neon-green font-bold text-lg">Oct 2024 - Jan 2025</span>
-                                </div>
-                                <h4 class="text-xl font-semibold mb-2">Freelance Web Developer</h4>
-                                <p class="text-md opacity-90 italic mb-2">Fiverr</p>
-                                <p class="text-md opacity-80">
-                                    Worked as a freelancer for clients as a means of keeping myself occupied while also making money. 
-                                    Decided to discontinue as I found there were not enough clients willing to pay for my services.
-                                </p>
-                            </div>
-                            <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
-                                <div class="flex items-center mb-2">
-                                    <span class="text-neon-green font-bold text-xl mr-2">👨‍🏫</span>
-                                    <span class="text-neon-green font-bold text-lg">Summer 2021-2022</span>
-                                </div>
-                                <h4 class="text-xl font-semibold mb-2">Python Programming Tutor</h4>
-                                <p class="text-md opacity-80">
-                                    Tutored high schoolers in basic Python programming to provide them with a foundational 
-                                    understanding of programming before starting their first year of university.
-                                </p>
-                            </div>
-                            <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
-                                <div class="flex items-center mb-2">
-                                    <span class="text-neon-green font-bold text-xl mr-2">🤝</span>
-                                    <span class="text-neon-green font-bold text-lg">2019-2020</span>
-                                </div>
-                                <h4 class="text-xl font-semibold mb-2">Volunteer</h4>
-                                <p class="text-md opacity-90 italic mb-2">Creative Junk</p>
-                                <p class="text-md opacity-80">
-                                    Volunteer work at an arts and crafts store. Responsibilities included cleaning, 
-                                    unloading and packing supplies, and aiding customers until COVID-19 hit.
-                                </p>
-                            </div>
+                    <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
+                        <div class="flex items-center mb-2">
+                            <span class="text-neon-green font-bold text-xl mr-2">📚</span>
+                            <span class="text-neon-green font-bold text-lg">2017-2018</span>
                         </div>
+                        <h4 class="text-xl font-semibold mb-2">NCEA Level 3</h4>
+                        <p class="text-lg">Hagley College</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-contents" id="experience">
+                <div class="space-y-6">
+                    <div class="glass-card p-6 border-l-4 border-neon-red hover:scale-[1.02] transition-transform">
+                        <div class="flex items-center mb-2">
+                            <span class="text-neon-red font-bold text-xl mr-2">💻</span>
+                            <span class="text-neon-red font-bold text-lg">November 2025 - Present</span>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2">Volunteer IT Worker</h4>
+                        <p class="text-md opacity-90 italic mb-2">TechMate</p>
+                        <p class="text-md opacity-80">
+                            I am currently a volunteer IT worker at TechMate, a community organisation that provides affordable
+                            access to information and communication technologies. I primarily aid citizens with technical support,
+                            teaching basic computer literacy, and assisting with hardware and software issues including setup, repairs,
+                            and maintenance.
+                        </p>
+                    </div>
+                    <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
+                        <div class="flex items-center mb-2">
+                            <span class="text-neon-green font-bold text-xl mr-2">💻</span>
+                            <span class="text-neon-green font-bold text-lg">Oct 2024 - Jan 2025</span>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2">Freelance Web Developer</h4>
+                        <p class="text-md opacity-90 italic mb-2">Fiverr</p>
+                        <p class="text-md opacity-80">
+                            Worked as a freelancer for clients as a means of keeping myself occupied while also making money. 
+                            Decided to discontinue as I found there were not enough clients willing to pay for my services.
+                        </p>
+                    </div>
+                    <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
+                        <div class="flex items-center mb-2">
+                            <span class="text-neon-green font-bold text-xl mr-2">👨‍🏫</span>
+                            <span class="text-neon-green font-bold text-lg">Summer 2021-2022</span>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2">Python Programming Tutor</h4>
+                        <p class="text-md opacity-80">
+                            Tutored high schoolers in basic Python programming to provide them with a foundational 
+                            understanding of programming before starting their first year of university.
+                        </p>
+                    </div>
+                    <div class="glass-card p-6 border-l-4 border-neon-green hover:scale-[1.02] transition-transform">
+                        <div class="flex items-center mb-2">
+                            <span class="text-neon-green font-bold text-xl mr-2">🤝</span>
+                            <span class="text-neon-green font-bold text-lg">2019-2020</span>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-2">Volunteer</h4>
+                        <p class="text-md opacity-90 italic mb-2">Creative Junk</p>
+                        <p class="text-md opacity-80">
+                            Volunteer work at an arts and crafts store. Responsibilities included cleaning, 
+                            unloading and packing supplies, and aiding customers until COVID-19 hit.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -315,170 +347,174 @@
 
 
 
-<!-- Contact + Projects Section -->
-    <section id="contact" class="border-t-4 border-solid border-neon-green">
-        <div class="container mx-auto p-10 overflow-hidden">
-            <h2 class="text-4xl font-bold text-white text-center mb-12">Contact and Projects</h2>
+    <!-- Projects Section -->
+    <section class="container mx-auto px-10 py-20" id="projects">
+        <h2 class="text-5xl md:text-6xl font-bold text-center mb-12">
+            <span class="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-neon-green via-green-400 to-neon-red animate-gradient">
+                Featured Projects
+            </span>
+        </h2>
 
-            <!-- separate contact and projects -->
-            <div class="flex flex-wrap lg:flex-nowrap justify-between gap-12 mt-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="glass-card p-6 mb-8">
+                <p class="text-md italic opacity-90 leading-relaxed">
+                    Please note that I do not find as much time to work on projects as I would like due to depression leading to frequent cases of "coder's block".
+                    I also have a habit of deleting or removing projects that I am dissatisfied with (my therapist believes this may be a form of self-sabotage
+                    and it is something I am trying to stop doing). I find it easier to perform commissioned projects or collaborative ones because of this. I hope you understand.
+                </p>
+            </div>
 
-                <!-- contact info and form on lhs -->
-                <div class="w-full lg:w-1/2">
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-bold text-neon-green mb-4">Get In Touch</h3>
-                        <div class="space-y-3">
-                            <p class="text-xl text-white flex items-center">
-                                <span class="text-neon-green mr-2">📧</span>
-                                <a href="mailto:max.dickson2000@gmail.com" class="header-links">max.dickson2000@gmail.com</a>
-                            </p>
-                            <p class="text-xl text-white flex items-center">
-                                <span class="text-neon-green mr-2">📱</span>
-                                <a href="tel:+64022386296" class="header-links">+64 022 386 0296</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="mb-8">
-                        <h3 class="text-2xl font-bold text-neon-green mb-4">Find Me Online</h3>
-                        <ul class="social-links space-y-3">
-                            <li><a href="https://www.linkedin.com/in/max-dickson-5080a7248/" target="_blank" rel="noopener" class="header-links flex items-center">
-                                <span class="text-neon-green mr-2">💼</span> LinkedIn
-                            </a></li>
-                            <li><a href="https://github.com/mdi48" target="_blank" rel="noopener" class="header-links flex items-center">
-                                <span class="text-neon-green mr-2">🐙</span> GitHub
-                            </a></li>
-                            <li><a href="https://flowcv.com/resume/8w8qflfn4o" target="_blank" rel="noopener" class="header-links flex items-center">
-                                <span class="text-neon-green mr-2">📄</span> My Resume (Currently out of date!!!)
-                            </a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Contact form using Formspree -->
-                    <div class="w-full">
-                        <h3 class="text-2xl font-bold text-neon-green mb-4">Send a Message</h3>
-                        <form action="https://formspree.io/f/mldpgzrq" method="POST" class="space-y-4" id="contact-form">
-                            <input type="text" name="name" class="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-neon-green focus:border-transparent" placeholder="Name" required>
-                            <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-neon-green focus:border-transparent" placeholder="Email" required>
-                            <textarea name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-neon-green focus:border-transparent resize-vertical" placeholder="Message" required></textarea>
-                            <button type="submit" class="btn w-full" id="submit-btn">Send</button>
-                        </form>
-                        <span id="msg" class="block mt-4 text-neon-green"></span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="project-card">
+                    <h4 class="text-xl font-bold mb-3">
+                        <a href="https://github.com/mdi48/mnemosyne" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Mnemosyne</a>
+                    </h4>
+                    <p class="opacity-90 mb-3">
+                        My current personal project: a full-stack quotes and aphorisms web app built with React on the frontend and Node.js, Express, and SQLite on the backend.
+                        It allows users to browse, search, and save their favorite quotes from many great writers, philosophers, and political figures
+                        throughout history. The app features a sleek, glassmorphism-inspired design with a focus on usability and accessibility, along with
+                        full CRUD operations via a RESTful API. My main goal with this project is to improve my skills in full-stack web development, and to create something that
+                        inspires and motivates others and encourages them to read more.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded">Node.js</span>
+                        <span class="inline-block bg-orange-600 text-white text-xs px-2 py-1 rounded">Express</span>
+                        <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded">REST API</span>
+                        <span class="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded">React</span>
+                        <span class="inline-block bg-cyan-500 text-white text-xs px-2 py-1 rounded">Tailwind CSS</span>
+                        <span class="inline-block bg-yellow-600 text-white text-xs px-2 py-1 rounded">SQLite</span>
                     </div>
                 </div>
 
-                <!-- some projects on rhs -->
-                <div class="w-full lg:w-1/2">
-                    <h3 class="text-2xl font-bold text-neon-green mb-6">Featured Projects</h3>
-                    <div class="mb-6 p-4 bg-gray-900 bg-opacity-50 rounded-lg border border-gray-700">
-                        <p class="text-sm italic">
-                            Please note that I do not find as much time to work on projects as I would like due to depression leading to frequent cases of "coder's block".
-                            I also have a habit of deleting or removing projects that I am dissatisfied with (my therapist believes this may be a form of self-sabotage
-                            and it is something I am trying to stop doing). I find it easier to perform commissioned projects or collaborative ones because of this. I hope you understand.</p>
-                    </div>
-
-                    <div class="space-y-6">
-
-                        <div class="project-card">
-                            <h4 class="text-xl font-bold mb-2">
-                                <a href="https://github.com/mdi48/mnemosyne" target="_blank" rel="noopener" class="text-neon-red" hover:underline transition-colors>Mnemosyne</a>
-                            </h4>
-                            <p>
-                                My current personal project: a full-stack quotes and aphorisms web app built with React on the frontend and Node.js, Express, and SQLite on the backend.
-                                It allows users to browse, search, and save their favorite quotes from many great writers, philosophers, and political figures
-                                throughout history. The app features a sleek, glassmorphism-inspired design with a focus on usability and accessibility, along with
-                                full CRUD operations via a RESTful API. My main goal with this project is to improve my skills in full-stack web development, and to create something that
-                                inspires and motivates others and encourages them to read more.
-                            </p>
-                            <div class="mt-2">
-                                <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded mr-2">Node.js</span>
-                                <span class="inline-block bg-orange-600 text-white text-xs px-2 py-1 rounded mr-2">Express</span>
-                                <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded mr-2">REST API</span>
-                                <span class="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded mr-2">React</span>
-                                <span class="inline-block bg-cyan-500 text-white text-xs px-2 py-1 rounded mr-2">Tailwind CSS</span>
-                                <span class="inline-block bg-yellow-600 text-white text-xs px-2 py-1 rounded">SQLite</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <h4 class="text-xl font-bold mb-2">
-                                <a href="https://github.com/mdi48/The-Sneed-Programming-Language" target="_blank" rel="noopener" class="text-neon-red" hover:underline transition-colors>The Sneed Programming Language</a>
-                            </h4>
-                            <p>
-                                A programming language I created as a fun side project to learn more about compilers and interpreters. 
-                                It is a simplified LISP dialect written in C, but comes packed with all (that's a lie, it's a tiny language after all :P) you need to program whatever you want,
-                                including functions, basic data types, and mathematical operations. The language's name is a pun combining a <a href="https://simpsons.fandom.com/wiki/Sneed's_Feed_%26_Seed" target="_blank" rel="noopener" class="text-neon-green">popular joke from The Simpsons</a>,
-                                and the popular programming language book <a href="https://en.wikipedia.org/wiki/The_C_Programming_Language" target="_blank" rel="noopener" class="text-neon-green">The C Programming Language</a>.
-                            </p>
-                            <div class="mt-2">
-                                <span class="inline-block bg-red-600 text-white text-xs px-2 py-1 rounded mr-2">C</span>
-                                <span class="inline-block bg-yellow-600 text-white text-xs px-2 py-1 rounded mr-2">Compiler</span>
-                                <span class="inline-block bg-purple-600 text-white text-xs px-2 py-1 rounded">Interpreter</span>
-                                <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded mr-2">LISP</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <h4 class="text-xl font-bold mb-2">
-                                <a href="https://github.com/mdi48/FlappAI-Bird" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">FlappAI-Bird</a>
-                            </h4>
-                            <p>A Flappy Bird clone that utilizes the NEAT neural network algorithm to learn from the mistakes of its previous attempts. This was done as a way of familiarizing myself with the basics of neural networks and aspects of machine learning in Python.</p>
-                            <div class="mt-2">
-                                <span class="inline-block bg-neon-green text-black text-xs px-2 py-1 rounded mr-2">Python</span>
-                                <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded mr-2">Machine Learning</span>
-                                <span class="inline-block bg-purple-600 text-white text-xs px-2 py-1 rounded">NEAT</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <h4 class="text-xl font-bold mb-2">
-                                <a href="https://github.com/mdi48/FoodFinder" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">FoodFinder</a>
-                            </h4>
-                            <p>A project I made to get some experience working with Next and Docker. It utilizes JS Web Tokens and GraphQL to allow users to search for places to eat.</p>
-                            <div class="mt-2">
-                                <span class="inline-block bg-gray-900 text-white text-xs px-2 py-1 rounded mr-2">Next.js</span>
-                                <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded mr-2">Docker</span>
-                                <span class="inline-block bg-pink-600 text-white text-xs px-2 py-1 rounded">GraphQL</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <h4 class="text-xl font-bold mb-2">
-                                <a href="https://github.com/mdi48/petition-site-backend" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Petition Site (Backend)</a>
-                            </h4>
-                            <p>The backend of a petition site that was developed for the University of Canterbury's SENG365 course. Received a mark of 86/100.</p>
-                            <div class="mt-2">
-                                <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded mr-2">Node.js</span>
-                                <span class="inline-block bg-orange-600 text-white text-xs px-2 py-1 rounded mr-2">Express</span>
-                                <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded">REST API</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <h4 class="text-xl font-bold mb-2">
-                                <a href="https://github.com/mdi48/petition-site-frontend--unfinished--" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Petition Site (Frontend)</a>
-                            </h4>
-                            <p>The (React) frontend of the petition site mentioned above. Unfortunately this was not finished to the standard I wanted it to be due to an ongoing personal crisis causing a great deal of stress.</p>
-                            <div class="mt-2">
-                                <span class="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded mr-2">React</span>
-                                <span class="inline-block bg-red-500 text-white text-xs px-2 py-1 rounded">Unfinished</span>
-                            </div>
-                        </div>
-
-                        <div class="project-card">
-                            <h4 class="text-xl font-bold mb-2">
-                                <a href="#" class="text-neon-red hover:underline transition-colors">This Portfolio Site</a>
-                            </h4>
-                            <p>The website you're currently looking at! Built with modern web technologies and responsive design principles.</p>
-                            <div class="mt-2">
-                                <span class="inline-block bg-orange-600 text-white text-xs px-2 py-1 rounded mr-2">HTML5</span>
-                                <span class="inline-block bg-cyan-500 text-white text-xs px-2 py-1 rounded mr-2">Tailwind CSS</span>
-                                <span class="inline-block bg-yellow-600 text-white text-xs px-2 py-1 rounded">JavaScript</span>
-                            </div>
-                        </div>
+                <div class="project-card">
+                    <h4 class="text-xl font-bold mb-3">
+                        <a href="https://github.com/mdi48/The-Sneed-Programming-Language" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">The Sneed Programming Language</a>
+                    </h4>
+                    <p class="opacity-90 mb-3">
+                        A programming language I created as a fun side project to learn more about compilers and interpreters. 
+                        It is a simplified LISP dialect written in C, but comes packed with all (that's a lie, it's a tiny language after all :P) you need to program whatever you want,
+                        including functions, basic data types, and mathematical operations. The language's name is a pun combining a <a href="https://simpsons.fandom.com/wiki/Sneed's_Feed_%26_Seed" target="_blank" rel="noopener" class="text-neon-green hover:underline">popular joke from The Simpsons</a>,
+                        and the popular programming language book <a href="https://en.wikipedia.org/wiki/The_C_Programming_Language" target="_blank" rel="noopener" class="text-neon-green hover:underline">The C Programming Language</a>.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-block bg-red-600 text-white text-xs px-2 py-1 rounded">C</span>
+                        <span class="inline-block bg-yellow-600 text-white text-xs px-2 py-1 rounded">Compiler</span>
+                        <span class="inline-block bg-purple-600 text-white text-xs px-2 py-1 rounded">Interpreter</span>
+                        <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded">LISP</span>
                     </div>
                 </div>
 
+                <div class="project-card">
+                    <h4 class="text-xl font-bold mb-3">
+                        <a href="https://github.com/mdi48/FlappAI-Bird" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">FlappAI-Bird</a>
+                    </h4>
+                    <p class="opacity-90 mb-3">A Flappy Bird clone that utilizes the NEAT neural network algorithm to learn from the mistakes of its previous attempts. This was done as a way of familiarizing myself with the basics of neural networks and aspects of machine learning in Python.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-block bg-neon-green text-black text-xs px-2 py-1 rounded">Python</span>
+                        <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded">Machine Learning</span>
+                        <span class="inline-block bg-purple-600 text-white text-xs px-2 py-1 rounded">NEAT</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4 class="text-xl font-bold mb-3">
+                        <a href="https://github.com/mdi48/FoodFinder" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">FoodFinder</a>
+                    </h4>
+                    <p class="opacity-90 mb-3">A project I made to get some experience working with Next and Docker. It utilizes JS Web Tokens and GraphQL to allow users to search for places to eat.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-block bg-gray-900 text-white text-xs px-2 py-1 rounded">Next.js</span>
+                        <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded">Docker</span>
+                        <span class="inline-block bg-pink-600 text-white text-xs px-2 py-1 rounded">GraphQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4 class="text-xl font-bold mb-3">
+                        <a href="https://github.com/mdi48/petition-site-backend" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Petition Site (Backend)</a>
+                    </h4>
+                    <p class="opacity-90 mb-3">The backend of a petition site that was developed for the University of Canterbury's SENG365 course. Received a mark of 86/100.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded">Node.js</span>
+                        <span class="inline-block bg-orange-600 text-white text-xs px-2 py-1 rounded">Express</span>
+                        <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded">REST API</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4 class="text-xl font-bold mb-3">
+                        <a href="https://github.com/mdi48/petition-site-frontend--unfinished--" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Petition Site (Frontend)</a>
+                    </h4>
+                    <p class="opacity-90 mb-3">The (React) frontend of the petition site mentioned above. Unfortunately this was not finished to the standard I wanted it to be due to an ongoing personal crisis causing a great deal of stress.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-block bg-blue-500 text-white text-xs px-2 py-1 rounded">React</span>
+                        <span class="inline-block bg-red-500 text-white text-xs px-2 py-1 rounded">Unfinished</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4 class="text-xl font-bold mb-3">
+                        <a href="#" class="text-neon-red hover:underline transition-colors">This Portfolio Site</a>
+                    </h4>
+                    <p class="opacity-90 mb-3">The website you're currently looking at! Built with modern web technologies and responsive design principles.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-block bg-orange-600 text-white text-xs px-2 py-1 rounded">HTML5</span>
+                        <span class="inline-block bg-cyan-500 text-white text-xs px-2 py-1 rounded">Tailwind CSS</span>
+                        <span class="inline-block bg-yellow-600 text-white text-xs px-2 py-1 rounded">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-10 py-20" id="contact">
+        <h2 class="text-5xl md:text-6xl font-bold text-center mb-12">
+            <span class="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-neon-green via-green-400 to-neon-red animate-gradient">
+                Get In Touch
+            </span>
+        </h2>
+
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Contact Info -->
+                <div class="glass-card p-8">
+                    <h3 class="text-2xl font-bold text-neon-green mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <span class="text-neon-green text-2xl mr-3">📧</span>
+                            <a href="mailto:max.dickson2000@gmail.com" class="header-links text-lg">max.dickson2000@gmail.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-neon-green text-2xl mr-3">📱</span>
+                            <a href="tel:+64022386296" class="header-links text-lg">+64 022 386 0296</a>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-neon-green mt-8 mb-6">Find Me Online</h3>
+                    <div class="space-y-4">
+                        <a href="https://www.linkedin.com/in/max-dickson-5080a7248/" target="_blank" rel="noopener" class="header-links flex items-center text-lg">
+                            <span class="text-neon-green text-2xl mr-3">💼</span> LinkedIn
+                        </a>
+                        <a href="https://github.com/mdi48" target="_blank" rel="noopener" class="header-links flex items-center text-lg">
+                            <span class="text-neon-green text-2xl mr-3">🐙</span> GitHub
+                        </a>
+                        <a href="https://flowcv.com/resume/8w8qflfn4o" target="_blank" rel="noopener" class="header-links flex items-center text-lg">
+                            <span class="text-neon-green text-2xl mr-3">📄</span> My Resume
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-card p-8">
+                    <h3 class="text-2xl font-bold text-neon-green mb-6">Send a Message</h3>
+                    <form action="https://formspree.io/f/mldpgzrq" method="POST" class="space-y-4" id="contact-form">
+                        <input type="text" name="name" class="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-neon-green focus:border-transparent" placeholder="Name" required>
+                        <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-neon-green focus:border-transparent" placeholder="Email" required>
+                        <textarea name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:ring-2 focus:ring-neon-green focus:border-transparent resize-vertical" placeholder="Message" required></textarea>
+                        <button type="submit" class="btn w-full" id="submit-btn">Send</button>
+                    </form>
+                    <span id="msg" class="block mt-4 text-neon-green"></span>
+                </div>
             </div>
         </div>
     </section>

@@ -23,37 +23,21 @@ function tabOpen(tabName, event) {
 }
 
 function toggleMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    const menuIcon = document.querySelector('.menu-icon');
-
-    navMenu.classList.toggle('open');
-
-
-    if (navMenu.classList.contains('open')) {
-        menuIcon.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00ff22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        `;
-    }
-
-    else {
-        menuIcon.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00ff22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-        `;
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenu) {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
     }
 }
 
+// Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
-    const navMenu = document.querySelector('.nav-menu');
-    const menuIcon = document.querySelector('.menu-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuButton = document.querySelector('button[aria-label="Toggle navigation menu"]');
+    const nav = document.querySelector('nav');
 
-    if (!navMenu.contains(e.target) && !menuIcon.contains(e.target) && navMenu.classList.contains('open')) {
+    if (mobileMenu && menuButton && nav && !nav.contains(e.target) && mobileMenu.classList.contains('flex')) {
         toggleMenu();
     }
 });
@@ -161,4 +145,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Toggle genre sections on interests page
+function toggleGenre(genreId) {
+    const content = document.getElementById(`${genreId}-content`);
+    const arrow = document.getElementById(`${genreId}-arrow`);
+    
+    if (content && arrow) {
+        content.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180');
+    }
+}
 
