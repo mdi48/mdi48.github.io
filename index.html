@@ -275,6 +275,20 @@
                                 </div>
                             </div>
 
+                            <div class="skill-card">
+                                <div class="flex items-start mb-3">
+                                    <span class="text-neon-green font-bold text-xl mr-3">🐹</span>
+                                    <div class="flex-1">
+                                        <h4 class="text-neon-green font-bold text-lg mb-2">Go</h4>
+                                        <p class="text-md opacity-90 leading-relaxed">
+                                            Built Witi, a terminal tool for checking package installation status on Arch-based Linux distributions. 
+                                            Gained experience with Go's simplicity and performance for CLI tool development. Currently my favourite
+                                            programming language.
+                                        </p>
+                                    </div>
+                                </div>    
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -381,6 +395,71 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="project-card">
                     <h4 class="text-xl font-bold mb-3">
+                        <a href="https://github.com/mdi48/centauri-prototype" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Centauri (Prototype Stage)</a>
+                    </h4>
+                    <p class="opacity-90 mb-3">
+                        I really, really dislike the lack of pagination in GitHub's starred repositories section, so I decided "I should make a better version of this, with blackjack and pagination."
+                        <br><br>
+                        Jokes aside, I find this lack of pagination (among other things) to be a huge pain when it comes to browsing through my starred repositories, as I like to use it as a sort of bookmarking section
+                        for stuff that interests me. This of course becomes an issue when you have as many starred repos as I do (circa 750 at the time of writing this), and it makes it very difficult to find
+                        specific repos that I have starred in the past. Enter Centauri (named after Omega Centauri, the largest star cluster in the Milky Way), a web app that I am building to solve this problem. It is currently in the prototype
+                        stage, with the version you see being a mockup that relied primarily on AI to build. The full version will be built in Elixir. I wanted to learn more functional programming and Elixir seemed like not only a fun
+                        and interesting language, but I know that Phoenix is considered one of the best web frameworks out there, so I wanted to give it a try. Perhaps an unusual choice for this project, but hey, it'll be fun to learn
+                        and build, and that's what matters most to me with my projects.
+                    </p>
+                    <div>
+                        <span class="inline-block bg-purple-700 text-white text-xs px-2 py-1 rounded">Elixir</span>
+                        <span class="inline-block bg-orange-600 text-white text-xs px-2 py-1 rounded">Phoenix</span>
+                        <span class="inline-block bg-yellow-600 text-white text-xs px-2 py-1 rounded">GitHub API</span>
+                        <span class="inline-block bg-cyan-600 text-white text-xs px-2 py-1 rounded">Python (Prototype Stage)</span>
+                        <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded">AI (Prototype Stage)</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4 class="text-xl font-bold mb-3">
+                        <a href="https://github.com/mdi48/quasimodo" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Quasimodo</a>
+                    </h4>
+                    <p class="opacity-90 mb-3">
+                        Quasimodo is a beginner's project that I created to get back into statistics and data science-related stuff, and to learn more about machine learning.
+                        It utilizes Python and the Scikit-learn libary to train a random forest regression model on a dataset of movie reviews and their corresponding ratings
+                        (taken from daily IMDb data dumps), with the goal of being able to predict the rating of a theoretical movie based on various factors, such as its director,
+                        cast members, genre(s), year, and runtime. This is of course just a beginner's project done to get more into machine learning, and the model is a little naive,
+                        but it was a fun learning experience and I hope to improve it in the future.
+                        
+                        And yes, the name is a reference to <a href="https://www.youtube.com/watch?v=rmhVw6q-KOA" target="_blank" rel="noopener" class="text-neon-green hover:underline">that one Sopranos scene</a> :P
+                        <br><br>
+                        Bonus points if you found and understood the easter egg hidden somewhere in there too :)
+                    </p>
+                    <div>
+                        <span class="inline-block bg-cyan-600 text-white text-xs px-2 py-1 rounded">Python</span>
+                        <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded">Machine Learning</span>
+                        <span class="inline-block bg-green-600 text-white text-xs px-2 py-1 rounded">Data Science</span>
+                        <span class="inline-block bg-yellow-600 text-white text-xs px-2 py-1 rounded">Scikit-learn</span>
+                        <span class="inline-block bg-purple-600 text-white text-xs px-2 py-1 rounded">Statistics</span>
+
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4 class="text-xl font-bold mb-3">
+                        <a href="https://github.com/mdi48/witi" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Witi</a>
+                    </h4>
+                    <p class="opacity-90 mb-3">
+                        Witi (Pronounced "Witty"), or "Why Is This Installed?", is a terminal tool built in Go that allows users to quickly find information regarding the installation status of a given package.
+                        It will tell you if it was installed explicitly, or as a dependency of another package, and will also show you the dependency tree of the package in question (in the case it is 
+                        installed as a dependency). It is currently only available for Arch-based Linux distributions, however a Debian/Ubuntu version is in the works (and hopefully a version for Fedora
+                        later on. We'll see what happens after that...)
+                    </p>
+                    <div>
+                        <span class="inline-block bg-teal-500 text-white text-xs px-2 py-1 rounded">Go</span>
+                        <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded">CLI Tool</span>
+                        <span class="inline-block bg-yellow-600 text-white text-xs px-2 py-1 rounded">Package Management</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4 class="text-xl font-bold mb-3">
                         <a href="https://github.com/mdi48/awesome-modern-alternatives" target="_blank" rel="noopener" class="text-neon-red hover:underline transition-colors">Awesome Modern Alternatives</a>
                     </h4>
                     <p class="opacity-90 mb-3">
@@ -441,7 +520,7 @@
                     </h4>
                     <p class="opacity-90 mb-3">A Flappy Bird clone that utilizes the NEAT neural network algorithm to learn from the mistakes of its previous attempts. This was done as a way of familiarizing myself with the basics of neural networks and aspects of machine learning in Python.</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="inline-block bg-neon-green text-black text-xs px-2 py-1 rounded">Python</span>
+                        <span class="inline-block bg-cyan-600 text-white text-xs px-2 py-1 rounded">Python</span>
                         <span class="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded">Machine Learning</span>
                         <span class="inline-block bg-purple-600 text-white text-xs px-2 py-1 rounded">NEAT</span>
                     </div>
